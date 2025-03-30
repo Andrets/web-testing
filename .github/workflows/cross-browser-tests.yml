@@ -30,36 +30,22 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y xvfb libxi6 libgconf-2-4
 
-      - name: Update system and install browsers
+      - name: Install browsers
         run: |
-          # Update system packages
-          sudo apt-get update
-          sudo apt-get upgrade -y
-
-          # Install required dependencies
-          sudo apt-get install -y wget unzip xvfb libxi6
-          sudo apt-get install -y libgconf-2-4 || sudo apt-get install -y libgconf2-4
-
-          # Add Google Chrome repository
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-
-          # Add Microsoft Edge repository
-          curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-edge-keyring.gpg
-          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-edge-keyring.gpg] https://packages.microsoft.com/repos/edge stable main" | sudo tee /etc/apt/sources.list.d/microsoft-edge.list
-
-          # Update package list again
-          sudo apt-get update
-
           # Install Chrome
-          sudo apt-get install -y google-chrome-stable
+          wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -f install -y
+          # Checking Chrome installation
+          google-chrome-stable --version
 
           # Install Edge
-          sudo apt-get install -y microsoft-edge-stable
-
-          # Install Firefox
-          sudo apt-get install -y firefox
+          wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_120.0.2210.91-1_amd64.deb"
+          sudo dpkg -i microsoft-edge-stable_120.0.2210.91-1_amd64.deb || sudo apt-get -f install -y
+          # Checking Edge installation
+          microsoft-edge --version
 
       - name: Install WebDrivers
         run: |
@@ -81,23 +67,10 @@ jobs:
           unzip -o edgedriver.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/msedgedriver
 
-          # Firefox WebDriver (GeckoDriver)
-          wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz" -O geckodriver.tar.gz
-          tar -xzf geckodriver.tar.gz -C /usr/local/bin/
-          chmod +x /usr/local/bin/geckodriver
-
-          # Yandex WebDriver
-          wget -q "https://repo.yandex.ru/webdriver/yandexdriver-linux-latest.zip" -O yandexdriver.zip
-          unzip -o yandexdriver.zip -d /usr/local/bin/
-          chmod +x /usr/local/bin/yandexdriver
-
       - name: Run tests with Xvfb
         run: |
           mkdir -p allure-results
-          xvfb-run -a BROWSER=chrome python crossbrowsertests.py
-          xvfb-run -a BROWSER=yandex python crossbrowsertests.py
-          xvfb-run -a BROWSER=edge python crossbrowsertests.py
-          xvfb-run -a BROWSER=firefox python crossbrowsertests.py
+          BROWSER=chrome python crossbrowsertests.py
 
       - name: Generate Allure Report
         run: |

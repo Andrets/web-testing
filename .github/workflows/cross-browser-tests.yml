@@ -62,11 +62,29 @@ jobs:
           fi
 
           echo "Chrome version: ${CHROME_VERSION}"
-          wget -q "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}" -O chrome_version.txt || { echo 'Failed to fetch Chrome version'; exit 1; }
+
+          # Fetch the ChromeDriver version based on Chrome version
+          if [ -z "$CHROME_VERSION" ]; then
+            echo "Error: Failed to retrieve Chrome version."
+            exit 1
+          fi
+
+          wget -q "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}" -O chrome_version.txt
+          if [ $? -ne 0 ]; then
+            echo "Failed to fetch ChromeDriver version for Chrome ${CHROME_VERSION}. Check your network or the availability of the service."
+            exit 1
+          fi
+
           CHROMEDRIVER_VERSION=$(cat chrome_version.txt)
           echo "ChromeDriver version: ${CHROMEDRIVER_VERSION}"
-          wget -q "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O chromedriver.zip || { echo 'Failed to fetch ChromeDriver'; exit 1; }
-          unzip -o chromedriver.zip -d /usr/local/bin/ || { echo 'Failed to unzip ChromeDriver'; exit 1; }
+
+          # Download and extract ChromeDriver
+          wget -q "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O chromedriver.zip
+          if [ $? -ne 0 ]; then
+            echo "Error: Failed to download ChromeDriver version ${CHROMEDRIVER_VERSION}. Check network or service availability."
+            exit 1
+          fi
+          unzip -o chromedriver.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/chromedriver || { echo 'Failed to chmod ChromeDriver'; exit 1; }
 
           # Edge WebDriver

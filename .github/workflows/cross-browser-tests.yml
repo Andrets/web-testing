@@ -36,8 +36,9 @@ jobs:
           sudo apt-get install -y firefox
 
           # Install Yandex Browser
-          wget -q "https://browser.yandex.ru/download?os=linux&arch=amd64&browser=beta&lang=ru"
-          sudo dpkg -i yandex-browser-beta_24.1.4.930-1_amd64.deb || sudo apt-get -f install -y
+          wget -O yandex-browser-beta.deb "https://cache-mskdataline.cdn.yandex.net/download.cdn.yandex.net/browser/deb/beta/yandex-browser-beta_24.1.4.930-1_amd64.deb"
+          ls -lah  # Check if the file was downloaded
+          sudo dpkg -i yandex-browser-beta.deb || sudo apt-get -f install -y
 
           # Install WebDrivers
           mkdir -p /usr/local/bin

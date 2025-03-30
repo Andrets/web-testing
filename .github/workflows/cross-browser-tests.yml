@@ -12,6 +12,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      # Cache Python dependencies to speed up the workflow
+      - name: Cache Python dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-python-
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -24,6 +33,9 @@ jobs:
 
       - name: Install browsers and drivers
         run: |
+          # Update package list to avoid missing dependencies
+          sudo apt-get update
+
           # Install Chrome
           wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -f install -y
@@ -32,7 +44,7 @@ jobs:
           wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_120.0.2210.91-1_amd64.deb"
           sudo dpkg -i microsoft-edge-stable_120.0.2210.91-1_amd64.deb || sudo apt-get -f install -y
 
-          # Install Firefox
+          # Install Firefox (snap version)
           sudo apt-get install -y firefox
 
           # Install Yandex Browser
@@ -41,18 +53,23 @@ jobs:
 
           # Install WebDrivers
           mkdir -p /usr/local/bin
+
+          # Chrome WebDriver
           wget -q "https://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver-linux64.zip" -O chromedriver.zip
           unzip chromedriver.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/chromedriver
 
+          # Edge WebDriver
           wget -q "https://msedgedriver.azureedge.net/$(curl -sS https://msedgedriver.azureedge.net/LATEST_STABLE)/edgedriver_linux64.zip" -O edgedriver.zip
           unzip edgedriver.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/msedgedriver
 
+          # Yandex WebDriver
           wget -q "https://repo.yandex.ru/webdriver/yandexdriver-linux-latest.zip" -O yandexdriver.zip
           unzip yandexdriver.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/yandexdriver
 
+          # Firefox WebDriver
           wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz" -O geckodriver.tar.gz
           tar -xzf geckodriver.tar.gz -C /usr/local/bin/
           chmod +x /usr/local/bin/geckodriver

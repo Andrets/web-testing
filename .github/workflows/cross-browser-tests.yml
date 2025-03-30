@@ -48,20 +48,24 @@ jobs:
       - name: Install WebDrivers
         run: |
           # Create directory for WebDrivers
+          echo "Creating directory for WebDrivers"
           mkdir -p /usr/local/bin
 
-          # Chrome WebDriver
-          CHROME_VERSION=$(google-chrome --version | cut -d ' ' -f 3 | cut -d '.' -f 1)
-          wget -q "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}" -O chrome_version.txt
+          echo "Downloading Chrome WebDriver"
+          wget -q "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" -O chrome_version.txt
           CHROMEDRIVER_VERSION=$(cat chrome_version.txt)
           wget -q "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O chromedriver.zip
-          unzip -o chromedriver.zip -d /usr/local/bin/
-          chmod +x /usr/local/bin/chromedriver
 
-          # Edge WebDriver
+          echo "Downloading Edge WebDriver"
           wget -q "https://msedgedriver.azureedge.net/LATEST_STABLE" -O edge_version.txt
           EDGEDRIVER_VERSION=$(cat edge_version.txt)
           wget -q "https://msedgedriver.azureedge.net/${EDGEDRIVER_VERSION}/edgedriver_linux64.zip" -O edgedriver.zip
+
+          echo "Unzipping Chrome WebDriver"
+          unzip -o chromedriver.zip -d /usr/local/bin/
+          chmod +x /usr/local/bin/chromedriver
+
+          echo "Unzipping Edge WebDriver" 
           unzip -o edgedriver.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/msedgedriver
 

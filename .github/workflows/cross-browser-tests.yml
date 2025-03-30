@@ -26,19 +26,18 @@ jobs:
         run: |
           # Install Chrome
           wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-          sudo apt-get update
-          sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -f install -y
 
           # Install Edge
           wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_120.0.2210.91-1_amd64.deb"
-          sudo apt-get install -y ./microsoft-edge-stable_120.0.2210.91-1_amd64.deb
+          sudo dpkg -i microsoft-edge-stable_120.0.2210.91-1_amd64.deb || sudo apt-get -f install -y
 
           # Install Firefox
           sudo apt-get install -y firefox
 
           # Install Yandex Browser
           wget -q "https://browser.yandex.ru/download?os=linux&arch=amd64&browser=beta&lang=ru"
-          sudo apt-get install -y ./yandex-browser-beta_*.deb
+          sudo dpkg -i yandex-browser-beta_24.1.4.930-1_amd64.deb || sudo apt-get -f install -y
 
           # Install WebDrivers
           mkdir -p /usr/local/bin

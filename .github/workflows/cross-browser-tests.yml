@@ -47,10 +47,6 @@ jobs:
           # Install Firefox (snap version)
           sudo apt-get install -y firefox
 
-          # Install Yandex Browser
-          wget -q "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-stable/yandex-browser-stable_25.2.1.939-1_amd64.deb"
-          sudo dpkg -i yandex-browser-stable_25.2.1.939-1_amd64.deb || sudo apt-get -f install -y
-
           # Install WebDrivers
           mkdir -p /usr/local/bin
 

@@ -38,17 +38,25 @@ jobs:
           sudo apt-get upgrade -y
 
           # Install required dependencies
-          sudo apt-get install -y wget unzip xvfb libxi6 libgconf-2-4
+          sudo apt-get install -y wget unzip xvfb libxi6
+          sudo apt-get install -y libgconf-2-4 || sudo apt-get install -y libgconf2-4
+
+          # Add Google Chrome repository
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
+          # Add Microsoft Edge repository
+          curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-edge-keyring.gpg
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-edge-keyring.gpg] https://packages.microsoft.com/repos/edge stable main" | sudo tee /etc/apt/sources.list.d/microsoft-edge.list
+
+          # Update package list again
+          sudo apt-get update
 
           # Install Chrome
-          wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-          sudo dpkg -i google-chrome-stable_current_amd64.deb || true
-          sudo apt-get install -f -y
+          sudo apt-get install -y google-chrome-stable
 
           # Install Edge
-          wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_120.0.2210.91-1_amd64.deb"
-          sudo dpkg -i microsoft-edge-stable_120.0.2210.91-1_amd64.deb || true
-          sudo apt-get install -f -y
+          sudo apt-get install -y microsoft-edge-stable
 
           # Install Firefox
           sudo apt-get install -y firefox

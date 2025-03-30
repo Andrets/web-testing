@@ -1,0 +1,80 @@
+name: Cross Browser Testing
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install browsers and drivers
+        run: |
+          # Install Chrome
+          wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+          sudo apt-get update
+          sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+
+          # Install Edge
+          wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_120.0.2210.91-1_amd64.deb"
+          sudo apt-get install -y ./microsoft-edge-stable_120.0.2210.91-1_amd64.deb
+
+          # Install Firefox
+          sudo apt-get install -y firefox
+
+          # Install Yandex Browser
+          wget -q "https://browser.yandex.ru/download?os=linux&arch=amd64&browser=beta&lang=ru"
+          sudo apt-get install -y ./yandex-browser-beta_*.deb
+
+          # Install WebDrivers
+          mkdir -p /usr/local/bin
+          wget -q "https://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver-linux64.zip" -O chromedriver.zip
+          unzip chromedriver.zip -d /usr/local/bin/
+          chmod +x /usr/local/bin/chromedriver
+
+          wget -q "https://msedgedriver.azureedge.net/$(curl -sS https://msedgedriver.azureedge.net/LATEST_STABLE)/edgedriver_linux64.zip" -O edgedriver.zip
+          unzip edgedriver.zip -d /usr/local/bin/
+          chmod +x /usr/local/bin/msedgedriver
+
+          wget -q "https://repo.yandex.ru/webdriver/yandexdriver-linux-latest.zip" -O yandexdriver.zip
+          unzip yandexdriver.zip -d /usr/local/bin/
+          chmod +x /usr/local/bin/yandexdriver
+
+          wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz" -O geckodriver.tar.gz
+          tar -xzf geckodriver.tar.gz -C /usr/local/bin/
+          chmod +x /usr/local/bin/geckodriver
+
+      - name: Run tests
+        run: |
+          mkdir -p allure-results
+          BROWSER=chrome python crossbrowsertests.py
+          BROWSER=yandex python crossbrowsertests.py
+          BROWSER=edge python crossbrowsertests.py
+          BROWSER=firefox python crossbrowsertests.py
+
+      - name: Generate Allure Report
+        run: |
+          wget -qO allure.tar.gz https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.tgz
+          tar -xzf allure.tar.gz
+          ./allure-2.17.2/bin/allure generate allure-results -o allure-report --clean
+
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report
+          path: allure-report/
+          retention-days: 7

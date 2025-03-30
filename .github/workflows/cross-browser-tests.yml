@@ -47,27 +47,41 @@ jobs:
 
       - name: Install WebDrivers
         run: |
-          # Create directory for WebDrivers
           echo "Creating directory for WebDrivers"
           mkdir -p /usr/local/bin
 
-          echo "Downloading Chrome WebDriver"
-          wget -q "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" -O chrome_version.txt
+          # Chrome WebDriver
+          echo "Fetching Chrome version"
+          CHROME_VERSION=$(google-chrome --version 2>/dev/null | cut -d ' ' -f 3 | cut -d '.' -f 1)
+
+          if [ -z "$CHROME_VERSION" ]; then
+            echo "Chrome is not installed or version retrieval failed. Installing Chrome."
+            wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+            sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -f install -y
+            CHROME_VERSION=$(google-chrome --version 2>/dev/null | cut -d ' ' -f 3 | cut -d '.' -f 1)
+          fi
+
+          echo "Chrome version: ${CHROME_VERSION}"
+          wget -q "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}" -O chrome_version.txt || { echo 'Failed to fetch Chrome version'; exit 1; }
           CHROMEDRIVER_VERSION=$(cat chrome_version.txt)
-          wget -q "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O chromedriver.zip
+          echo "ChromeDriver version: ${CHROMEDRIVER_VERSION}"
+          wget -q "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O chromedriver.zip || { echo 'Failed to fetch ChromeDriver'; exit 1; }
+          unzip -o chromedriver.zip -d /usr/local/bin/ || { echo 'Failed to unzip ChromeDriver'; exit 1; }
+          chmod +x /usr/local/bin/chromedriver || { echo 'Failed to chmod ChromeDriver'; exit 1; }
 
-          echo "Downloading Edge WebDriver"
-          wget -q "https://msedgedriver.azureedge.net/LATEST_STABLE" -O edge_version.txt
-          EDGEDRIVER_VERSION=$(cat edge_version.txt)
-          wget -q "https://msedgedriver.azureedge.net/${EDGEDRIVER_VERSION}/edgedriver_linux64.zip" -O edgedriver.zip
+          # Edge WebDriver
+          echo "Fetching Edge version"
+          EDGE_VERSION=$(wget -qO- "https://msedgedriver.azureedge.net/LATEST_STABLE")
 
-          echo "Unzipping Chrome WebDriver"
-          unzip -o chromedriver.zip -d /usr/local/bin/
-          chmod +x /usr/local/bin/chromedriver
+          if [ -z "$EDGE_VERSION" ]; then
+            echo "Edge version retrieval failed."
+            exit 1
+          fi
 
-          echo "Unzipping Edge WebDriver" 
-          unzip -o edgedriver.zip -d /usr/local/bin/
-          chmod +x /usr/local/bin/msedgedriver
+          echo "EdgeDriver version: ${EDGE_VERSION}"
+          wget -q "https://msedgedriver.azureedge.net/${EDGE_VERSION}/edgedriver_linux64.zip" -O edgedriver.zip || { echo 'Failed to fetch EdgeDriver'; exit 1; }
+          unzip -o edgedriver.zip -d /usr/local/bin/ || { echo 'Failed to unzip EdgeDriver'; exit 1; }
+          chmod +x /usr/local/bin/msedgedriver || { echo 'Failed to chmod EdgeDriver'; exit 1; }
 
       - name: Run tests with Xvfb
         run: |

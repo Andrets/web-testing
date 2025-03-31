@@ -27,16 +27,24 @@ class BaseTest(unittest.TestCase):
         browser = os.getenv('BROWSER', 'chrome').lower()
         
         if browser == 'chrome':
-            options = ChromeOptions()
-            options.add_argument('--headless')
-            options.add_argument('--no-sandbox')
-            options.add_argument('--disable-dev-shm-usage')
+            options = webdriver.ChromeOptions()
+            options.add_argument("--headless")  # Headless режим
+            options.add_argument("--no-sandbox")
+            options.add_argument("--disable-dev-shm-usage")
+
+            # Отладочный вывод пути к ChromeDriver
             chromedriver_path = ChromeDriverManager().install()
             print(f"ChromeDriver path: {chromedriver_path}")
+
+            # Ручное исправление пути
+            if not chromedriver_path.endswith("chromedriver"):
+                chromedriver_path = "/home/runner/.wdm/drivers/chromedriver/linux64/134.0.6998.165/chromedriver-linux64/chromedriver"
+                print(f"Fixed ChromeDriver path: {chromedriver_path}")
+
             cls.driver = webdriver.Chrome(
-							service=Service(chromedriver_path),
-							options=options
-						)
+                service=Service(chromedriver_path),
+                options=options
+            )
         elif browser == 'yandex':
             service = Service('/usr/local/bin/yandexdriver')
             options = ChromeOptions()

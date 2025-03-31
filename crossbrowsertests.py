@@ -31,8 +31,10 @@ class BaseTest(unittest.TestCase):
             options.add_argument('--headless')
             options.add_argument('--no-sandbox')
             options.add_argument('--disable-dev-shm-usage')
+            chromedriver_path = ChromeDriverManager().install()
+            print(f"ChromeDriver path: {chromedriver_path}")
             cls.driver = webdriver.Chrome(
-							service=Service(ChromeDriverManager().install()),
+							service=Service(chromedriver_path),
 							options=options
 						)
         elif browser == 'yandex':

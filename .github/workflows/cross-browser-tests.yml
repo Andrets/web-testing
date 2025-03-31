@@ -40,11 +40,12 @@ jobs:
           unzip edgedriver_linux64.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/msedgedriver
 
-          # Install Firefox
-          sudo apt-get install -y firefox
-          wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz"
-          tar -xzf geckodriver-v0.33.0-linux64.tar.gz -C /usr/local/bin/
-          chmod +x /usr/local/bin/geckodriver
+          # Install Yandex
+          wget -q "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-beta/yandex-browser-beta_24.5.0.1748-1_amd64.deb"
+          sudo dpkg -i yandex-browser-beta_24.5.0.1748-1_amd64.deb || sudo apt-get -f install -y
+          wget -q "https://storage.yandexcloud.net/yandex-driver/linux/latest/yandexdriver.tar.gz"
+          tar -xzf yandexdriver.tar.gz -C /usr/local/bin/
+          chmod +x /usr/local/bin/yandexdriver
 
       - name: Run tests in Chrome
         run: |
@@ -55,11 +56,6 @@ jobs:
         run: |
           mkdir -p allure-results
           BROWSER=edge pytest crossbrowsertests.py --alluredir=allure-results
-
-      - name: Run tests in Firefox
-        run: |
-          mkdir -p allure-results
-          BROWSER=firefox pytest crossbrowsertests.py --alluredir=allure-results
 
       - name: Run tests in Yandex
         run: |

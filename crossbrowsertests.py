@@ -27,6 +27,9 @@ class BaseTest(unittest.TestCase):
         
         if browser == 'chrome':
             options = ChromeOptions()
+            options.add_argument('--headless')
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-dev-shm-usage')
             cls.driver = webdriver.Chrome(options=options)
         elif browser == 'yandex':
             service = Service('/usr/local/bin/yandexdriver')
@@ -34,6 +37,9 @@ class BaseTest(unittest.TestCase):
             cls.driver = webdriver.Chrome(service=service, options=options)
         elif browser == 'edge':
             options = EdgeOptions()
+            options.add_argument('--headless')
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-dev-shm-usage')
             cls.driver = webdriver.Edge(options=options)
         elif browser == 'firefox':
             options = FirefoxOptions()

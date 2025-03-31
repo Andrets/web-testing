@@ -51,9 +51,7 @@ class BaseTest(unittest.TestCase):
             options.add_argument('--headless')
             options.add_argument('--no-sandbox')
             options.add_argument('--disable-dev-shm-usage')
-            options.binary_location = '/usr/bin/yandex-browser-beta'
-            print(f"YandexBrowser version: {cls.driver.capabilities['browserVersion']}")
-            print(f"YandexDriver version: {cls.driver.capabilities['chrome']['chromedriverVersion']}")
+            options.binary_location = '/usr/bin/yandex-browser'
             cls.driver = webdriver.Chrome(service=service, options=options)
         elif browser == 'edge':
             options = EdgeOptions()

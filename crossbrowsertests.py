@@ -48,6 +48,9 @@ class BaseTest(unittest.TestCase):
         elif browser == 'yandex':
             service = Service('/usr/local/bin/yandexdriver')
             options = ChromeOptions()
+            options.add_argument('--headless')
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-dev-shm-usage')
             cls.driver = webdriver.Chrome(service=service, options=options)
         elif browser == 'edge':
             options = EdgeOptions()
@@ -57,6 +60,9 @@ class BaseTest(unittest.TestCase):
             cls.driver = webdriver.Edge(options=options)
         elif browser == 'firefox':
             options = FirefoxOptions()
+            options.add_argument('--headless')
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-dev-shm-usage')
             cls.driver = webdriver.Firefox(options=options)
         else:
             raise ValueError(f'Unsupported browser: {browser}')

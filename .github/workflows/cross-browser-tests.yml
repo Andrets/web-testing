@@ -40,21 +40,42 @@ jobs:
           unzip edgedriver_linux64.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/msedgedriver
 
+          # Install Firefox
+          sudo apt-get update && sudo apt-get install -y firefox-esr
+          wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz"
+          tar -xzf geckodriver-v0.33.0-linux64.tar.gz -C /usr/local/bin/
+          chmod +x /usr/local/bin/geckodriver
+
+          # Install Yandex
+          wget -q "https://github.com/yandex/yandex-tank/releases/download/v2.1.0/yandex-tank-2.1.0-linux-amd64.tar.gz"
+          tar -xzf yandex-tank-2.1.0-linux-amd64.tar.gz -C /usr/local/bin/
+          chmod +x /usr/local/bin/yandexdriver
+
       - name: Run tests in Chrome
         run: |
           mkdir -p allure-results
           BROWSER=chrome pytest crossbrowsertests.py --alluredir=allure-results
+
+      - name: Run tests in Edge
+        run: |
+          mkdir -p allure-results
+          BROWSER=edge pytest crossbrowsertests.py --alluredir=allure-results
+
+      - name: Run tests in Firefox
+        run: |
+          mkdir -p allure-results
+          BROWSER=firefox pytest crossbrowsertests.py --alluredir=allure-results
+
+      - name: Run tests in Yandex
+        run: |
+          mkdir -p allure-results
+          BROWSER=yandex pytest crossbrowsertests.py --alluredir=allure-results
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
         with:
           name: screenshots
           path: '*.png'
-
-      - name: Run tests in Edge
-        run: |
-          mkdir -p allure-results
-          BROWSER=edge pytest crossbrowsertests.py --alluredir=allure-results
 
       - name: Generate Allure Report
         run: |

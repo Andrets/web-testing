@@ -41,14 +41,16 @@ jobs:
           chmod +x /usr/local/bin/msedgedriver
 
           # Install Firefox
-          sudo apt-get update && sudo apt-get install -y firefox-esr
+          sudo apt-get install -y firefox
           wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz"
           tar -xzf geckodriver-v0.33.0-linux64.tar.gz -C /usr/local/bin/
           chmod +x /usr/local/bin/geckodriver
 
-          # Install Yandex
-          wget -q "https://github.com/yandex/yandex-tank/releases/download/v2.1.0/yandex-tank-2.1.0-linux-amd64.tar.gz"
-          tar -xzf yandex-tank-2.1.0-linux-amd64.tar.gz -C /usr/local/bin/
+          # Install Yandex Browser
+          wget -q "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-beta/yandex-browser-beta_24.5.0.1748-1_amd64.deb"
+          sudo dpkg -i yandex-browser-beta_24.5.0.1748-1_amd64.deb || sudo apt-get -f install -y
+          wget -q "https://storage.yandexcloud.net/yandex-driver/linux/latest/yandexdriver.tar.gz"
+          tar -xzf yandexdriver.tar.gz -C /usr/local/bin/
           chmod +x /usr/local/bin/yandexdriver
 
       - name: Run tests in Chrome

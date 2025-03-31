@@ -41,10 +41,10 @@ jobs:
           chmod +x /usr/local/bin/msedgedriver
 
           # Install Yandex
-          wget -q "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-beta/yandex-browser-beta_24.5.0.1748-1_amd64.deb"
-          sudo dpkg -i yandex-browser-beta_24.5.0.1748-1_amd64.deb || sudo apt-get -f install -y
-          wget -q "https://storage.yandexcloud.net/yandex-driver/linux/latest/yandexdriver.tar.gz"
-          tar -xzf yandexdriver.tar.gz -C /usr/local/bin/
+          wget -q "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-stable/yandex-browser-stable_25.2.1.939-1_amd64.deb"
+          sudo dpkg -i yandex-browser-stable_25.2.1.939-1_amd64.deb || sudo apt-get -f install -y
+          wget -q "https://github.com/yandex/YandexDriver/releases/download/v25.2.1-stable/yandexdriver-25.2.1.799-linux.zip"
+          unzip yandexdriver-25.2.1.799-linux.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/yandexdriver
 
       - name: Run tests in Chrome

@@ -1,0 +1,52 @@
+name: API Tests
+
+on:
+  push:
+    branches: [api-testing]
+  pull_request:
+    branches: [api-testing]
+
+jobs:
+  run-api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          npm install -g newman
+          npm install -g newman-reporter-allure
+          sudo apt-get update && sudo apt-get install -y allure-commandline
+
+      - name: Run Apple collection tests
+        run: |
+          mkdir -p allure-results/apple
+          newman run Apple.postman_collection.json \
+            --reporters allure \
+            --reporter-allure-export allure-results/apple
+
+      - name: Run Xiaomi collection tests
+        run: |
+          mkdir -p allure-results/xiaomi
+          newman run Xiaomi.postman_collection.json \
+            --reporters allure \
+            --reporter-allure-export allure-results/xiaomi
+
+      - name: Generate Allure Report
+        run: |
+          wget -qO allure.tar.gz https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.tgz
+          tar -xzf allure.tar.gz
+          ./allure-2.17.2/bin/allure generate allure-results -o allure-report --clean
+
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report/

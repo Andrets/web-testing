@@ -2,9 +2,9 @@ name: Cross Browser Testing
 
 on:
   push:
-    branches: [main]
+    branches: [web-testing]
   pull_request:
-    branches: [main]
+    branches: [web-testing]
 
 jobs:
   test:

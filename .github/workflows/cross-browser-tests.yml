@@ -7,10 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  test_chrome:
+  test:
     runs-on: ubuntu-latest
-    container:
-      image: selenium/standalone-chrome:latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -24,66 +22,41 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Install browsers and WebDrivers
+        run: |
+          # Install Chrome
+          sudo apt-get update && sudo apt-get install -y google-chrome-stable
+          wget -q "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" -O chrome_version.txt
+          CHROMEDRIVER_VERSION=$(cat chrome_version.txt)
+          wget -q "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+          unzip chromedriver_linux64.zip -d /usr/local/bin/
+          chmod +x /usr/local/bin/chromedriver
+
+          # Install Edge
+          wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_120.0.2210.91-1_amd64.deb"
+          sudo dpkg -i microsoft-edge-stable_120.0.2210.91-1_amd64.deb || sudo apt-get -f install -y
+          wget -q "https://msedgedriver.azureedge.net/120.0.2210.91/edgedriver_linux64.zip"
+          unzip edgedriver_linux64.zip -d /usr/local/bin/
+          chmod +x /usr/local/bin/msedgedriver
 
       - name: Run tests in Chrome
         run: |
           mkdir -p allure-results
-          BROWSER=chrome python crossbrowsertests.py --alluredir=allure-results
-
-      - name: Upload Allure results for Chrome
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results-chrome
-          path: allure-results/
-
-  test_edge:
-    runs-on: ubuntu-latest
-    container:
-      image: selenium/standalone-edge:latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          BROWSER=chrome pytest crossbrowsertests.py --alluredir=allure-results
 
       - name: Run tests in Edge
         run: |
           mkdir -p allure-results
           BROWSER=edge pytest crossbrowsertests.py --alluredir=allure-results
 
-      - name: Upload Allure results for Edge
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results-edge
-          path: allure-results/
-
-  generate_report:
-    needs: [test_chrome, test_edge]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Download Allure results
-        uses: actions/download-artifact@v4
-        with:
-          path: allure-results
-
-      - name: Generate Allure report
+      - name: Generate Allure Report
         run: |
-          wget -q0 allure.tar.gz https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.tgz
+          wget -qO allure.tar.gz https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.tgz
           tar -xzf allure.tar.gz
           ./allure-2.17.2/bin/allure generate allure-results -o allure-report --clean
 
-      - name: Upload Allure report
+      - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
           name: allure-report

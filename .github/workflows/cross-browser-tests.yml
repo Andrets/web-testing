@@ -40,10 +40,6 @@ jobs:
           unzip edgedriver_linux64.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/msedgedriver
 
-      - name: Fix Chrome Driver permissions
-        run: |
-          chmod +x /home/runner/.wdm/drivers/chromedriver/linux64/*/chromedriver
-
       - name: Run tests in Chrome
         run: |
           mkdir -p allure-results

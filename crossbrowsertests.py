@@ -17,6 +17,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 class BaseTest(unittest.TestCase):
     driver = None
@@ -30,7 +31,10 @@ class BaseTest(unittest.TestCase):
             options.add_argument('--headless')
             options.add_argument('--no-sandbox')
             options.add_argument('--disable-dev-shm-usage')
-            cls.driver = webdriver.Chrome(options=options)
+            cls.driver = webdriver.Chrome(
+							service=Service(ChromeDriverManager().install()),
+							options=options
+						)
         elif browser == 'yandex':
             service = Service('/usr/local/bin/yandexdriver')
             options = ChromeOptions()

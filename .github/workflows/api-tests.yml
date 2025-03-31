@@ -24,7 +24,9 @@ jobs:
           npm install -g newman
           npm install -g newman-reporter-allure
           sudo apt-get update && sudo apt-get install -y wget
-          wget -qO - https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.21.0/allure-commandline-2.21.0.deb | sudo dpkg -i -
+          wget -q "https://github.com/allure-framework/allure2/releases/download/2.33.0/allure-2.33.0.zip"
+          unzip allure-2.33.0.zip -d /usr/local/bin/
+          chmod +x /usr/local/bin/allure
 
       - name: Run Apple collection tests
         run: |

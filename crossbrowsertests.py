@@ -24,7 +24,7 @@ class BaseTest(unittest.TestCase):
      
     @classmethod
     def setUpClass(cls):
-        browser = os.getenv('BROWSER', 'chrome').lower()
+        browser = cls.browser
         
         if browser == 'chrome':
             options = webdriver.ChromeOptions()
@@ -77,7 +77,7 @@ class BaseTest(unittest.TestCase):
         driver.get('https://www.apple.com/')
         
         # Сохраняем скриншот для отладки
-        driver.save_screenshot("apple_homepage.png")
+        driver.save_screenshot(f"apple_homepage_{self.browser}.png")
         
         try:
             # Дождитесь завершения загрузки страницы
@@ -87,7 +87,7 @@ class BaseTest(unittest.TestCase):
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "nav.globalnav")))
         except Exception as e:
             # Сохраняем скриншот при ошибке
-            driver.save_screenshot("error_screenshot.png")
+            driver.save_screenshot(f"error_screenshot_{self.browser}.png")
             raise
     
     @classmethod
@@ -95,6 +95,14 @@ class BaseTest(unittest.TestCase):
         if cls.driver:
             cls.driver.quit()
 
+def create_test_class(browser_name):
+    class_name = f"{browser_name.capitalize()}Search"
+    return type(class_name, (BaseTest,), {'browser': browser_name})
+
+BROWSERS = ['chrome', 'yandex', 'edge']
+
+for browser in BROWSERS:
+    globals()[f"{browser.capitalize()}Search"] = create_test_class(browser)
 
 if __name__ == '__main__':
     unittest.main()

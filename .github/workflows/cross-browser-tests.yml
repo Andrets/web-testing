@@ -47,20 +47,10 @@ jobs:
           unzip yandexdriver-25.2.1.799-linux.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/yandexdriver
 
-      - name: Run tests in Chrome
+      - name: Run tests
         run: |
           mkdir -p allure-results
-          BROWSER=chrome pytest crossbrowsertests.py --alluredir=allure-results
-
-      - name: Run tests in Edge
-        run: |
-          mkdir -p allure-results
-          BROWSER=edge pytest crossbrowsertests.py --alluredir=allure-results
-
-      - name: Run tests in Yandex
-        run: |
-          mkdir -p allure-results
-          BROWSER=yandex pytest crossbrowsertests.py --alluredir=allure-results
+          pytest crossbrowsertests.py --alluredir=allure-results
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4

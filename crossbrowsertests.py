@@ -19,75 +19,49 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-class BaseTest(unittest.TestCase):
+# Класс для тестирования в Chrome
+class ChromeSearch(unittest.TestCase):
     driver = None
-     
+
     @classmethod
     def setUpClass(cls):
-        browser = cls.browser
+        # Настройка Chrome
+        options = webdriver.ChromeOptions()
+        options.add_argument("--headless")  # Headless режим
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
         
-        if browser == 'chrome':
-            options = webdriver.ChromeOptions()
-            options.add_argument("--headless")  # Headless режим
-            options.add_argument("--no-sandbox")
-            options.add_argument("--disable-dev-shm-usage")
-
-            # Отладочный вывод пути к ChromeDriver
-            chromedriver_path = ChromeDriverManager().install()
-            print(f"ChromeDriver path: {chromedriver_path}")
-
-            # Ручное исправление пути
-            if not chromedriver_path.endswith("chromedriver"):
-                chromedriver_path = "/home/runner/.wdm/drivers/chromedriver/linux64/134.0.6998.165/chromedriver-linux64/chromedriver"
-                print(f"Fixed ChromeDriver path: {chromedriver_path}")
-
-            cls.driver = webdriver.Chrome(
-                service=Service(chromedriver_path),
-                options=options
-            )
-        elif browser == 'yandex':
-            service = Service('/usr/local/bin/yandexdriver')
-            options = ChromeOptions()
-            options.add_argument('--headless')
-            options.add_argument('--no-sandbox')
-            options.add_argument('--disable-dev-shm-usage')
-            options.binary_location = '/usr/bin/yandex-browser'
-            cls.driver = webdriver.Chrome(service=service, options=options)
-        elif browser == 'edge':
-            options = EdgeOptions()
-            options.add_argument('--headless')
-            options.add_argument('--no-sandbox')
-            options.add_argument('--disable-dev-shm-usage')
-            cls.driver = webdriver.Edge(options=options)
-        elif browser == 'firefox':
-            options = FirefoxOptions()
-            options.add_argument('--headless')
-            options.add_argument('--no-sandbox')
-            options.add_argument('--disable-dev-shm-usage')
-            cls.driver = webdriver.Firefox(options=options)
-        else:
-            raise ValueError(f'Unsupported browser: {browser}')
-        
+        # Отладочный вывод пути к ChromeDriver
+        chromedriver_path = ChromeDriverManager().install()
+        print(f"ChromeDriver path: {chromedriver_path}")
+        # Ручное исправление пути
+        if not chromedriver_path.endswith("chromedriver"):
+            chromedriver_path = "/home/runner/.wdm/drivers/chromedriver/linux64/134.0.6998.165/chromedriver-linux64/chromedriver"
+            print(f"Fixed ChromeDriver path: {chromedriver_path}")
+        cls.driver = webdriver.Chrome(
+            service=Service(chromedriver_path),
+            options=options
+        )
         cls.driver.maximize_window()
-    
+
     def test_search_apple_site(self):
-        '''Open Apple.com and check having navigation bar'''
+        '''Open Apple.com and check having navigation bar in Chrome'''
         driver = self.driver
-        wait = WebDriverWait(driver, 20)
+        wait = WebDriverWait(driver, 30)
         driver.get('https://www.apple.com/')
-        
+
         # Сохраняем скриншот для отладки
-        driver.save_screenshot(f"apple_homepage_{self.browser}.png")
-        
+        driver.save_screenshot("apple_homepage_chrome.png")
+
         try:
             # Дождитесь завершения загрузки страницы
             wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
-            
+
             # Дождитесь появления элемента
             wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "nav.globalnav")))
         except Exception as e:
             # Сохраняем скриншот при ошибке
-            driver.save_screenshot(f"error_screenshot_{self.browser}.png")
+            driver.save_screenshot("error_screenshot_chrome.png")
             raise
     
     @classmethod
@@ -95,14 +69,88 @@ class BaseTest(unittest.TestCase):
         if cls.driver:
             cls.driver.quit()
 
-def create_test_class(browser_name):
-    class_name = f"{browser_name.capitalize()}Search"
-    return type(class_name, (BaseTest,), {'browser': browser_name})
+# Класс для тестирования в Yandex
+class YandexSearch(unittest.TestCase):
+    driver = None
 
-BROWSERS = ['chrome', 'yandex', 'edge']
+    @classmethod
+    def setUpClass(cls):
+        # Настройка Yandex
+        service = Service('/usr/local/bin/yandexdriver')
+        options = ChromeOptions()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        options.binary_location = '/usr/bin/yandex-browser'
+        cls.driver = webdriver.Chrome(service=service, options=options)
+        cls.driver.maximize_window()
 
-for browser in BROWSERS:
-    globals()[f"{browser.capitalize()}Search"] = create_test_class(browser)
+
+    def test_search_apple_site(self):
+        '''Open Apple.com and check having navigation bar in Yandex'''
+        driver = self.driver
+        wait = WebDriverWait(driver, 30)
+        driver.get('https://www.apple.com/')
+
+        # Сохраняем скриншот для отладки
+        driver.save_screenshot("apple_homepage_yandex.png")
+
+        try:
+            # Дождитесь завершения загрузки страницы
+            wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
+
+            # Дождитесь появления элемента
+            wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "nav.globalnav")))
+        except Exception as e:
+            # Сохраняем скриншот при ошибке
+            driver.save_screenshot("error_screenshot_yandex.png")
+            raise
+
+    @classmethod
+    def tearDownClass(cls):
+        if cls.driver:
+            cls.driver.quit()
+
+# Класс для тестирования в Edge
+class EdgeSearch(unittest.TestCase):
+    driver = None
+
+    @classmethod
+    def setUpClass(cls):
+        # Настройка Edge
+        options = EdgeOptions()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        cls.driver = webdriver.Edge(options=options)
+        cls.driver.maximize_window()
+
+
+    def test_search_apple_site(self):
+        '''Open Apple.com and check having navigation bar in Edge'''
+        driver = self.driver
+        wait = WebDriverWait(driver, 30)
+        driver.get('https://www.apple.com/')
+
+        # Сохраняем скриншот для отладки
+        driver.save_screenshot("apple_homepage_edge.png")
+
+        try:
+            # Дождитесь завершения загрузки страницы
+            wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
+
+            # Дождитесь появления элемента
+            wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "nav.globalnav")))
+        except Exception as e:
+            # Сохраняем скриншот при ошибке
+            driver.save_screenshot("error_screenshot_edge.png")
+            raise
+    
+    @classmethod
+    def tearDownClass(cls):
+        if cls.driver:
+            cls.driver.quit()
+
 
 if __name__ == '__main__':
     unittest.main()

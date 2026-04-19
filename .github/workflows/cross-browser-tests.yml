@@ -9,74 +9,79 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Запускаем 3 копии джобы параллельно для каждого браузера
+        browser: [chrome, firefox, edge]
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: "3.9"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          # Библиотека webdriver-manager в python коде сама скачает нужный драйвер
 
-      - name: Install browsers and WebDrivers
+      # Установка Chrome и драйвера (если предустановленного мало)
+      - name: Setup Chrome
+        if: matrix.browser == 'chrome'
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      # Установка Firefox и GeckoDriver
+      - name: Setup Firefox
+        if: matrix.browser == 'firefox'
+        uses: browser-actions/setup-firefox@v1
+
+      # Установка Edge
+      - name: Setup Edge
+        if: matrix.browser == 'edge'
+        uses: browser-actions/setup-edge@v1
+
+      - name: Run tests
+        env:
+          BROWSER: ${{ matrix.browser }}
         run: |
-          # Install Chrome
-          sudo apt-get update && sudo apt-get install -y google-chrome-stable
-          wget -q "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" -O chrome_version.txt
-          CHROMEDRIVER_VERSION=$(cat chrome_version.txt)
-          wget -q "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
-          unzip chromedriver_linux64.zip -d /usr/local/bin/
-          chmod +x /usr/local/bin/chromedriver
+          # Используем матричную переменную для запуска конкретного браузера
+          pytest tests/ --alluredir=allure-results-${{ matrix.browser }}
 
-          # Install Edge
-          wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_120.0.2210.91-1_amd64.deb"
-          sudo dpkg -i microsoft-edge-stable_120.0.2210.91-1_amd64.deb || sudo apt-get -f install -y
-          wget -q "https://msedgedriver.azureedge.net/120.0.2210.91/edgedriver_linux64.zip"
-          unzip edgedriver_linux64.zip -d /usr/local/bin/
-          chmod +x /usr/local/bin/msedgedriver
-
-          # Install Yandex
-          wget -q "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-beta/yandex-browser-beta_25.2.1.941-1_amd64.deb"
-          sudo dpkg -i yandex-browser-beta_25.2.1.941-1_amd64.deb || sudo apt-get -f install -y
-          wget -q "https://github.com/yandex/YandexDriver/releases/download/v25.2.1-stable/yandexdriver-25.2.1.799-linux.zip"
-          unzip yandexdriver-25.2.1.799-linux.zip -d /usr/local/bin/
-          chmod +x /usr/local/bin/yandexdriver
-
-      - name: Run tests in Chrome
-        run: |
-          mkdir -p allure-results
-          BROWSER=chrome pytest crossbrowsertests.py --alluredir=allure-results
-
-      - name: Run tests in Edge
-        run: |
-          mkdir -p allure-results
-          BROWSER=edge pytest crossbrowsertests.py --alluredir=allure-results
-
-      - name: Run tests in Yandex
-        run: |
-          mkdir -p allure-results
-          BROWSER=yandex pytest crossbrowsertests.py --alluredir=allure-results
-
-      - name: Upload screenshots
+      - name: Upload results
         uses: actions/upload-artifact@v4
         with:
-          name: screenshots
-          path: '*.png'
+          name: allure-results-${{ matrix.browser }}
+          path: allure-results-${{ matrix.browser }}
+
+  # Отдельная джоба для сборки общего отчета после всех тестов
+  report:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all results
+        uses: actions/download-artifact@v4
+        with:
+          path: all-results
+          pattern: allure-results-*
+          merge-multiple: true
+
+      - name: Install Allure
+        run: |
+          wget -qO allure.tar.gz https://github.com
+          tar -xzf allure.tar.gz
 
       - name: Generate Allure Report
-        run: |
-          wget -qO allure.tar.gz https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.tgz
-          tar -xzf allure.tar.gz
-          ./allure-2.17.2/bin/allure generate allure-results -o allure-report --clean
+        run: ./allure-2.21.0/bin/allure generate all-results -o allure-report --clean
 
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report
+          name: full-allure-report
           path: allure-report/
-          retention-days: 7

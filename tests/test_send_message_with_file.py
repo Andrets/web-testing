@@ -36,6 +36,12 @@ class BaseTest(unittest.TestCase):
         actions = webdriver.ActionChains(driver)
         wait = WebDriverWait(driver, hp.time_wait)
 
+        allure.attach(
+            driver.get_screenshot_as_png(),
+            name="screenshot_homepage",
+            attachment_type=allure.attachment_type.PNG,
+        )
+
         try:
             # Choose DE language
             wait.until(
@@ -65,7 +71,11 @@ class BaseTest(unittest.TestCase):
                     )
 
         except Exception as e:
-            take_screenshot(driver, "Chrome Translation_into_german error")
+            allure.attach(
+                driver.get_screenshot_as_png(),
+                name="error_screenshot",
+                attachment_type=allure.attachment_type.PNG,
+            )
             self.fail(f"The test failed: {str(e)}")
 
 

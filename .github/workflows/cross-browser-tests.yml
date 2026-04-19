@@ -74,11 +74,11 @@ jobs:
 
       - name: Install Allure
         run: |
-          wget -qO allure.tar.gz https://github.com
+          wget -qO allure.tar.gz https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.tgz
           tar -xzf allure.tar.gz
 
       - name: Generate Allure Report
-        run: ./allure-2.21.0/bin/allure generate all-results -o allure-report --clean
+        run: ./allure-2.17.2/bin/allure generate all-results -o allure-report --clean
 
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4

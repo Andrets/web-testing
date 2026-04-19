@@ -1,6 +1,7 @@
 import os
 import unittest
 
+import allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -27,7 +28,11 @@ class BaseTest(unittest.TestCase):
         driver.get("https://www.apple.com/")
 
         # Сохраняем скриншот для отладки
-        driver.save_screenshot("apple_homepage.png")
+        allure.attach(
+            driver.get_screenshot_as_png(),
+            name="apple_homepage",
+            attachment_type=allure.attachment_type.PNG,
+        )
 
         try:
             # Дождитесь завершения загрузки страницы
@@ -43,19 +48,16 @@ class BaseTest(unittest.TestCase):
             )
         except Exception as e:
             # Сохраняем скриншот при ошибке
-            driver.save_screenshot("error_screenshot.png")
-            raise
+            allure.attach(
+                driver.get_screenshot_as_png(),
+                name="error_screenshot",
+                attachment_type=allure.attachment_type.PNG,
+            )
+            raise e
 
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
-
-
-def take_screenshot(driver, name):
-    screenshot_dir = "screenshots"
-    os.makedirs(screenshot_dir, exist_ok=True)
-    screenshot_path = os.path.join(screenshot_dir, f"{name}.png")
-    driver.save_screenshot(screenshot_path)
 
 
 if __name__ == "__main__":

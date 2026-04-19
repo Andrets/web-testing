@@ -1,12 +1,12 @@
 {
-  "uid" : "ff81d3955bdefafe",
+  "uid" : "f76cfe33f76848bb",
   "name" : "test_search_apple_site",
   "fullName" : "tests.test_search_apple_site.BaseTest#test_search_apple_site",
-  "historyId" : "57ae4dd4a42a6aae3c6e2807acb13cd7",
+  "historyId" : "ce65788a342a9fccfbc324f5dece26bb",
   "time" : {
-    "start" : 1776639918858,
-    "stop" : 1776639919559,
-    "duration" : 701
+    "start" : 1776641990527,
+    "stop" : 1776641991417,
+    "duration" : 890
   },
   "description" : "Open Apple.com and check having navigation bar",
   "descriptionHtml" : "<p>Open Apple.com and check having navigation bar</p>\n",
@@ -20,9 +20,9 @@
   "beforeStages" : [ {
     "name" : "_unittest_setUpClass_fixture_BaseTest",
     "time" : {
-      "start" : 1776639912886,
-      "stop" : 1776639918857,
-      "duration" : 5971
+      "start" : 1776641981950,
+      "stop" : 1776641990526,
+      "duration" : 8576
     },
     "status" : "passed",
     "steps" : [ ],
@@ -38,11 +38,11 @@
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "704680d4fb6b8710",
+      "uid" : "f2585afc26644150",
       "name" : "apple_homepage",
-      "source" : "704680d4fb6b8710.png",
+      "source" : "f2585afc26644150.png",
       "type" : "image/png",
-      "size" : 2473
+      "size" : 275105
     } ],
     "parameters" : [ ],
     "stepsCount" : 0,
@@ -53,9 +53,9 @@
   "afterStages" : [ {
     "name" : "_unittest_setUpClass_fixture_BaseTest::0",
     "time" : {
-      "start" : 1776639919560,
-      "stop" : 1776639919616,
-      "duration" : 56
+      "start" : 1776641991418,
+      "stop" : 1776641992283,
+      "duration" : 865
     },
     "status" : "passed",
     "steps" : [ ],
@@ -80,7 +80,7 @@
     "value" : "runnervmeorf1"
   }, {
     "name" : "thread",
-    "value" : "2357-MainThread"
+    "value" : "2439-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -94,14 +94,19 @@
     "name" : "resultFormat",
     "value" : "allure2"
   } ],
-  "parameters" : [ ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "'firefox'"
+  } ],
   "links" : [ ],
-  "hidden" : true,
-  "retry" : true,
+  "hidden" : false,
+  "retry" : false,
   "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "ff81d3955bdefafe.json",
-  "parameterValues" : [ ]
+  "source" : "f76cfe33f76848bb.json",
+  "parameterValues" : [ "'firefox'" ]
 }

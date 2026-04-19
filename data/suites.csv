@@ -1,2 +1,7 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Apr 19 23:05:28 UTC 2026","Sun Apr 19 23:05:28 UTC 2026","883","tests","test_search_apple_site","BaseTest","","","test_search_apple_site","Open Apple.com and check having navigation bar"
+"passed","Sun Apr 19 23:39:57 UTC 2026","Sun Apr 19 23:39:58 UTC 2026","798","tests","test_search_apple_site","BaseTest","","","test_search_apple_site","Open Apple.com and check having navigation bar"
+"passed","Sun Apr 19 23:39:45 UTC 2026","Sun Apr 19 23:39:45 UTC 2026","570","tests","test_search_apple_site","BaseTest","","","test_search_apple_site","Open Apple.com and check having navigation bar"
+"failed","Sun Apr 19 23:39:46 UTC 2026","Sun Apr 19 23:40:17 UTC 2026","30919","tests","test_send_message_with_file","BaseTest","","","test_01_registration",""
+"failed","Sun Apr 19 23:39:59 UTC 2026","Sun Apr 19 23:40:30 UTC 2026","30698","tests","test_send_message_with_file","BaseTest","","","test_01_registration",""
+"passed","Sun Apr 19 23:39:50 UTC 2026","Sun Apr 19 23:39:51 UTC 2026","890","tests","test_search_apple_site","BaseTest","","","test_search_apple_site","Open Apple.com and check having navigation bar"
+"failed","Sun Apr 19 23:39:54 UTC 2026","Sun Apr 19 23:40:17 UTC 2026","22543","tests","test_send_message_with_file","BaseTest","","","test_01_registration",""

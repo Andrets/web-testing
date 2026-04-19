@@ -1,5 +1,5 @@
 {
-  "57ae4dd4a42a6aae3c6e2807acb13cd7" : {
+  "b041672474f6e8a8e985106ac3c76341" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -9,12 +9,110 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "9f5104b833231ca2",
+      "uid" : "87fb3fa2de7b0685",
       "status" : "passed",
       "time" : {
-        "start" : 1776639928075,
-        "stop" : 1776639928958,
-        "duration" : 883
+        "start" : 1776641985208,
+        "stop" : 1776641985778,
+        "duration" : 570
+      }
+    } ]
+  },
+  "3a3f9c0735cc6a85de7e9b3e3bbd15ab" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "53c3a54849625973",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x5653f6e5db6a <unknown>\n#1 0x5653f685f265 <unknown>\n#2 0x5653f68b1f76 <unknown>\n#3 0x5653f68b21b1 <unknown>\n#4 0x5653f68fd7d4 <unknown>\n#5 0x5653f68fa969 <unknown>\n#6 0x5653f68a55cf <unknown>\n#7 0x5653f68a6391 <unknown>\n#8 0x5653f6e2304b <unknown>\n#9 0x5653f6e2600d <unknown>\n#10 0x5653f6e0f808 <unknown>\n#11 0x5653f6e26ba0 <unknown>\n#12 0x5653f6df6280 <unknown>\n#13 0x5653f6e4adb8 <unknown>\n#14 0x5653f6e4af88 <unknown>\n#15 0x5653f6e5c5de <unknown>\n#16 0x7fdd76e9caa4 <unknown>\n#17 0x7fdd76f29c6c <unknown>",
+      "time" : {
+        "start" : 1776641986623,
+        "stop" : 1776642017542,
+        "duration" : 30919
+      }
+    } ]
+  },
+  "18f1e05db94271ca48115c76ab245881" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4f056910acad6cb6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1776641997865,
+        "stop" : 1776641998663,
+        "duration" : 798
+      }
+    } ]
+  },
+  "687b34f0f4870e13d5ff7c107df7d24f" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "447ca82db00309ac",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: The test failed: Message: Unable to locate element: //a[normalize-space()='Kategorien']; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5\nNoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5\ndom.find/</<@chrome://remote/content/shared/DOM.sys.mjs:136:16",
+      "time" : {
+        "start" : 1776641994546,
+        "stop" : 1776642017089,
+        "duration" : 22543
+      }
+    } ]
+  },
+  "ce65788a342a9fccfbc324f5dece26bb" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f76cfe33f76848bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1776641990527,
+        "stop" : 1776641991417,
+        "duration" : 890
+      }
+    } ]
+  },
+  "9984ed6abf3a1247287bfdc38e3a5629" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "83862ed56e0a892e",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x55e7e3aa153e <unknown>\n#1 0x55e7e3461984 <unknown>\n#2 0x55e7e34b3276 <unknown>\n#3 0x55e7e34b3671 <unknown>\n#4 0x55e7e34fda54 <unknown>\n#5 0x55e7e34fb650 <unknown>\n#6 0x55e7e34a7997 <unknown>\n#7 0x55e7e34a85c1 <unknown>\n#8 0x55e7e3a6b58f <unknown>\n#9 0x55e7e3a6e6da <unknown>\n#10 0x55e7e3a6e16d <unknown>\n#11 0x55e7e3a5bd18 <unknown>\n#12 0x55e7e3a6ef34 <unknown>\n#13 0x55e7e3a451ce <unknown>\n#14 0x55e7e3a8ec18 <unknown>\n#15 0x55e7e3a8ee56 <unknown>\n#16 0x55e7e3aa01be <unknown>\n#17 0x7fca5129caa4 <unknown>\n#18 0x7fca51329c6c <unknown>",
+      "time" : {
+        "start" : 1776641999572,
+        "stop" : 1776642030270,
+        "duration" : 30698
       }
     } ]
   }

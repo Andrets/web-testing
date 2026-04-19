@@ -1,12 +1,12 @@
 {
-  "uid" : "4997c3a23d8c5240",
+  "uid" : "4f056910acad6cb6",
   "name" : "test_search_apple_site",
   "fullName" : "tests.test_search_apple_site.BaseTest#test_search_apple_site",
-  "historyId" : "57ae4dd4a42a6aae3c6e2807acb13cd7",
+  "historyId" : "18f1e05db94271ca48115c76ab245881",
   "time" : {
-    "start" : 1776639918520,
-    "stop" : 1776639919583,
-    "duration" : 1063
+    "start" : 1776641997865,
+    "stop" : 1776641998663,
+    "duration" : 798
   },
   "description" : "Open Apple.com and check having navigation bar",
   "descriptionHtml" : "<p>Open Apple.com and check having navigation bar</p>\n",
@@ -20,9 +20,9 @@
   "beforeStages" : [ {
     "name" : "_unittest_setUpClass_fixture_BaseTest",
     "time" : {
-      "start" : 1776639913187,
-      "stop" : 1776639918519,
-      "duration" : 5332
+      "start" : 1776641989615,
+      "stop" : 1776641997864,
+      "duration" : 8249
     },
     "status" : "passed",
     "steps" : [ ],
@@ -38,24 +38,30 @@
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "e18ec53dbb8eefd5",
+      "uid" : "1e725f71c2315c71",
       "name" : "apple_homepage",
-      "source" : "e18ec53dbb8eefd5.png",
+      "source" : "1e725f71c2315c71.png",
       "type" : "image/png",
-      "size" : 275105
+      "size" : 68854
+    }, {
+      "uid" : "b20b6259b45ffcc0",
+      "name" : "log",
+      "source" : "b20b6259b45ffcc0.txt",
+      "type" : "text/plain",
+      "size" : 298
     } ],
     "parameters" : [ ],
     "stepsCount" : 0,
-    "attachmentsCount" : 1,
+    "attachmentsCount" : 2,
     "shouldDisplayMessage" : false,
     "hasContent" : true
   },
   "afterStages" : [ {
     "name" : "_unittest_setUpClass_fixture_BaseTest::0",
     "time" : {
-      "start" : 1776639919584,
-      "stop" : 1776639920422,
-      "duration" : 838
+      "start" : 1776641998664,
+      "stop" : 1776641998725,
+      "duration" : 61
     },
     "status" : "passed",
     "steps" : [ ],
@@ -80,7 +86,7 @@
     "value" : "runnervmeorf1"
   }, {
     "name" : "thread",
-    "value" : "2435-MainThread"
+    "value" : "2506-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -94,14 +100,19 @@
     "name" : "resultFormat",
     "value" : "allure2"
   } ],
-  "parameters" : [ ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "'edge'"
+  } ],
   "links" : [ ],
-  "hidden" : true,
-  "retry" : true,
+  "hidden" : false,
+  "retry" : false,
   "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "4997c3a23d8c5240.json",
-  "parameterValues" : [ ]
+  "source" : "4f056910acad6cb6.json",
+  "parameterValues" : [ "'edge'" ]
 }

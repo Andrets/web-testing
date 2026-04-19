@@ -1,0 +1,11 @@
+[ {
+  "uid" : "9f5104b833231ca2",
+  "name" : "test_search_apple_site",
+  "time" : {
+    "start" : 1776639928075,
+    "stop" : 1776639928958,
+    "duration" : 883
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

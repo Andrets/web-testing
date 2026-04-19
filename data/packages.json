@@ -1,0 +1,26 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "tests.test_search_apple_site",
+    "children" : [ {
+      "name" : "test_search_apple_site",
+      "uid" : "9f5104b833231ca2",
+      "parentUid" : "3fa1885dc8e1ab4a5d11ca688f8a536a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1776639928075,
+        "stop" : 1776639928958,
+        "duration" : 883
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "tests.test_search_apple_site"
+  } ]
+}

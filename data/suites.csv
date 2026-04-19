@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Apr 19 23:05:28 UTC 2026","Sun Apr 19 23:05:28 UTC 2026","883","tests","test_search_apple_site","BaseTest","","","test_search_apple_site","Open Apple.com and check having navigation bar"

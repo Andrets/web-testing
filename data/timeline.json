@@ -1,0 +1,72 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "runnervmeorf1",
+    "children" : [ {
+      "name" : "2435-MainThread",
+      "children" : [ {
+        "name" : "test_search_apple_site",
+        "uid" : "4997c3a23d8c5240",
+        "parentUid" : "ff621c502d7232cdfd681ee51a85c43a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1776639918520,
+          "stop" : 1776639919583,
+          "duration" : 1063
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "ff621c502d7232cdfd681ee51a85c43a"
+    }, {
+      "name" : "2459-MainThread",
+      "children" : [ {
+        "name" : "test_search_apple_site",
+        "uid" : "9f5104b833231ca2",
+        "parentUid" : "56034d1f8d402c539bafdfd3dc7d19e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1776639928075,
+          "stop" : 1776639928958,
+          "duration" : 883
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 2,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "56034d1f8d402c539bafdfd3dc7d19e9"
+    }, {
+      "name" : "2357-MainThread",
+      "children" : [ {
+        "name" : "test_search_apple_site",
+        "uid" : "ff81d3955bdefafe",
+        "parentUid" : "15e4caac974c05cd3d884cc60311c749",
+        "status" : "passed",
+        "time" : {
+          "start" : 1776639918858,
+          "stop" : 1776639919559,
+          "duration" : 701
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "15e4caac974c05cd3d884cc60311c749"
+    } ],
+    "uid" : "ce09105d079da436edacbb740a92f778"
+  } ]
+}

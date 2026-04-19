@@ -20,6 +20,7 @@ class BaseTest(unittest.TestCase):
             raise ValueError(f"Unsupported browser: {browser}")
         cls.driver = th.DRIVERS[browser]()
         cls.driver.maximize_window()
+        allure.dynamic.parameter("browser", browser)
 
     def test_search_apple_site(self):
         """Open Apple.com and check having navigation bar"""

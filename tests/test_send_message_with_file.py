@@ -2,6 +2,7 @@ import os
 import time
 import unittest
 
+import allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,7 +13,7 @@ import tests.helpers as th
 
 
 class BaseTest(unittest.TestCase):
-    driver = None
+    driver: webdriver.Remote
 
     @classmethod
     def setUpClass(cls):
@@ -21,6 +22,7 @@ class BaseTest(unittest.TestCase):
             raise ValueError(f"Unsupported browser: {browser}")
         cls.driver = th.DRIVERS[browser]()
         cls.driver.maximize_window()
+        allure.dynamic.parameter("browser", browser)
 
     @classmethod
     def tearDownClass(cls):

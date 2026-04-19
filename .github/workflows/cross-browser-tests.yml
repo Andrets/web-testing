@@ -56,6 +56,7 @@ jobs:
 
       - name: Upload results
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: allure-results-${{ matrix.browser }}
           path: allure-results-${{ matrix.browser }}
@@ -64,6 +65,7 @@ jobs:
   report:
     needs: test
     runs-on: ubuntu-latest
+    if: always()
     permissions:
       contents: write
       pages: write

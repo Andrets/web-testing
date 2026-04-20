@@ -2,118 +2,25 @@
   "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
   "name" : "packages",
   "children" : [ {
-    "name" : "tests",
+    "name" : "Search_apple_site",
     "children" : [ {
       "name" : "test_search_apple_site",
-      "children" : [ {
-        "name" : "test_search_apple_site",
-        "uid" : "87fb3fa2de7b0685",
-        "parentUid" : "3fa1885dc8e1ab4a5d11ca688f8a536a",
-        "status" : "passed",
-        "time" : {
-          "start" : 1776641985208,
-          "stop" : 1776641985778,
-          "duration" : 570
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "newPassed" : false,
-        "newBroken" : false,
-        "retriesCount" : 0,
-        "retriesStatusChange" : false,
-        "parameters" : [ "'chrome'" ]
-      }, {
-        "name" : "test_search_apple_site",
-        "uid" : "f76cfe33f76848bb",
-        "parentUid" : "3fa1885dc8e1ab4a5d11ca688f8a536a",
-        "status" : "passed",
-        "time" : {
-          "start" : 1776641990527,
-          "stop" : 1776641991417,
-          "duration" : 890
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "newPassed" : false,
-        "newBroken" : false,
-        "retriesCount" : 0,
-        "retriesStatusChange" : false,
-        "parameters" : [ "'firefox'" ]
-      }, {
-        "name" : "test_search_apple_site",
-        "uid" : "4f056910acad6cb6",
-        "parentUid" : "3fa1885dc8e1ab4a5d11ca688f8a536a",
-        "status" : "passed",
-        "time" : {
-          "start" : 1776641997865,
-          "stop" : 1776641998663,
-          "duration" : 798
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "newPassed" : false,
-        "newBroken" : false,
-        "retriesCount" : 0,
-        "retriesStatusChange" : false,
-        "parameters" : [ "'edge'" ]
-      } ],
-      "uid" : "3fa1885dc8e1ab4a5d11ca688f8a536a"
-    }, {
-      "name" : "test_send_message_with_file",
-      "children" : [ {
-        "name" : "test_01_registration",
-        "uid" : "53c3a54849625973",
-        "parentUid" : "e0523e0633191c694a5e9906f5530987",
-        "status" : "failed",
-        "time" : {
-          "start" : 1776641986623,
-          "stop" : 1776642017542,
-          "duration" : 30919
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "newPassed" : false,
-        "newBroken" : false,
-        "retriesCount" : 0,
-        "retriesStatusChange" : false,
-        "parameters" : [ "'chrome'" ]
-      }, {
-        "name" : "test_01_registration",
-        "uid" : "447ca82db00309ac",
-        "parentUid" : "e0523e0633191c694a5e9906f5530987",
-        "status" : "failed",
-        "time" : {
-          "start" : 1776641994546,
-          "stop" : 1776642017089,
-          "duration" : 22543
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "newPassed" : false,
-        "newBroken" : false,
-        "retriesCount" : 0,
-        "retriesStatusChange" : false,
-        "parameters" : [ "'firefox'" ]
-      }, {
-        "name" : "test_01_registration",
-        "uid" : "83862ed56e0a892e",
-        "parentUid" : "e0523e0633191c694a5e9906f5530987",
-        "status" : "failed",
-        "time" : {
-          "start" : 1776641999572,
-          "stop" : 1776642030270,
-          "duration" : 30698
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "newPassed" : false,
-        "newBroken" : false,
-        "retriesCount" : 0,
-        "retriesStatusChange" : false,
-        "parameters" : [ "'edge'" ]
-      } ],
-      "uid" : "e0523e0633191c694a5e9906f5530987"
+      "uid" : "a6ee6b5d339bd0f",
+      "parentUid" : "d6d779302f266d52cafb234a2d58bd5c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1776719064335,
+        "stop" : 1776719065099,
+        "duration" : 764
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "'firefox'" ]
     } ],
-    "uid" : "bf49149a3821e34f7608bb6885d52868"
+    "uid" : "d6d779302f266d52cafb234a2d58bd5c"
   } ]
 }

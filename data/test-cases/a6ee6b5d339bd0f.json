@@ -1,12 +1,12 @@
 {
-  "uid" : "f76cfe33f76848bb",
+  "uid" : "a6ee6b5d339bd0f",
   "name" : "test_search_apple_site",
-  "fullName" : "tests.test_search_apple_site.BaseTest#test_search_apple_site",
-  "historyId" : "ce65788a342a9fccfbc324f5dece26bb",
+  "fullName" : "Search_apple_site.SearchAppleSiteTest#test_search_apple_site",
+  "historyId" : "f48e367c4d064d98a3351a1a8a626b04",
   "time" : {
-    "start" : 1776641990527,
-    "stop" : 1776641991417,
-    "duration" : 890
+    "start" : 1776719064335,
+    "stop" : 1776719065099,
+    "duration" : 764
   },
   "description" : "Open Apple.com and check having navigation bar",
   "descriptionHtml" : "<p>Open Apple.com and check having navigation bar</p>\n",
@@ -18,11 +18,11 @@
   "retriesCount" : 0,
   "retriesStatusChange" : false,
   "beforeStages" : [ {
-    "name" : "_unittest_setUpClass_fixture_BaseTest",
+    "name" : "_unittest_setUpClass_fixture_SearchAppleSiteTest",
     "time" : {
-      "start" : 1776641981950,
-      "stop" : 1776641990526,
-      "duration" : 8576
+      "start" : 1776719061880,
+      "stop" : 1776719064334,
+      "duration" : 2454
     },
     "status" : "passed",
     "steps" : [ ],
@@ -33,29 +33,12 @@
     "shouldDisplayMessage" : false,
     "hasContent" : false
   } ],
-  "testStage" : {
-    "description" : "Open Apple.com and check having navigation bar",
-    "status" : "passed",
-    "steps" : [ ],
-    "attachments" : [ {
-      "uid" : "f2585afc26644150",
-      "name" : "apple_homepage",
-      "source" : "f2585afc26644150.png",
-      "type" : "image/png",
-      "size" : 275105
-    } ],
-    "parameters" : [ ],
-    "stepsCount" : 0,
-    "attachmentsCount" : 1,
-    "shouldDisplayMessage" : false,
-    "hasContent" : true
-  },
   "afterStages" : [ {
-    "name" : "_unittest_setUpClass_fixture_BaseTest::0",
+    "name" : "_unittest_setUpClass_fixture_SearchAppleSiteTest::0",
     "time" : {
-      "start" : 1776641991418,
-      "stop" : 1776641992283,
-      "duration" : 865
+      "start" : 1776719065100,
+      "stop" : 1776719065807,
+      "duration" : 707
     },
     "status" : "passed",
     "steps" : [ ],
@@ -67,20 +50,17 @@
     "hasContent" : false
   } ],
   "labels" : [ {
-    "name" : "parentSuite",
-    "value" : "tests"
-  }, {
     "name" : "suite",
-    "value" : "test_search_apple_site"
+    "value" : "Search_apple_site"
   }, {
     "name" : "subSuite",
-    "value" : "BaseTest"
+    "value" : "SearchAppleSiteTest"
   }, {
     "name" : "host",
-    "value" : "runnervmeorf1"
+    "value" : "3e3f87ad1e91"
   }, {
     "name" : "thread",
-    "value" : "2439-MainThread"
+    "value" : "157-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -89,7 +69,7 @@
     "value" : "cpython3"
   }, {
     "name" : "package",
-    "value" : "tests.test_search_apple_site"
+    "value" : "Search_apple_site"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
@@ -107,6 +87,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "f76cfe33f76848bb.json",
+  "source" : "a6ee6b5d339bd0f.json",
   "parameterValues" : [ "'firefox'" ]
 }

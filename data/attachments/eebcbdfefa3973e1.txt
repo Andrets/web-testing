@@ -1,1 +1,0 @@
-WARNING  selenium.webdriver.common.selenium_manager:selenium_manager.py:144 Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_147_LINUX): error trying to connect: dns error: failed to lookup address information: Name does not resolve

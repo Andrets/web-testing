@@ -16,6 +16,13 @@ RUN apt-get update && apt-get install -y \
     libxi6 \
     libxtst6 \
     libgtk-3-0 \
+    libtk-3-common \
+    libpulse0 \
+    libgstreamer1.0-0 \
+    libgstreamer-plugins-base1.0-0 \
+    libgconf-2-4 \
+    libuuid1 \
+    libfreetype6 \
     curl \
     openjdk-11-jre-headless \
     xvfb \
@@ -26,6 +33,7 @@ RUN apt-get update && apt-get install -y \
     xdg-utils \
     fonts-liberation \
     libfontconfig1 \
+    fontconfig-config \
     libxrender1 \
     libxt6 \
     libdbus-glib-1-2 \

@@ -15,12 +15,17 @@ def create_chrome():
 def create_firefox():
     options = FirefoxOptions()
     options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
     return webdriver.Firefox(options=options)
 
 
 def create_edge():
     options = EdgeOptions()
     options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--user-data-dir=/tmp/edge-profile")
     return webdriver.Edge(options=options)
 
 

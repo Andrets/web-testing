@@ -7,10 +7,41 @@ on:
     branches: [main]
 
 jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      docker_changed: ${{ steps.filter.outputs.docker }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            docker:
+              - 'Dockerfile'
+              - 'requirements.txt'
+
+      - name: Login to GHCR
+        if: steps.filter.outputs.docker == 'true'
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build and Push
+        if: steps.filter.outputs.docker == 'true'
+        run: |
+          # Нижний регистр для Docker
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/cross-browser-tests:latest
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+          docker build -t $IMAGE_ID .
+          docker push $IMAGE_ID
+
   test:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/andrets/test-env:latest
+      image: ghcr.io/andrets/cross-browser-tests:latest
       options: --user root
     strategy:
       fail-fast: false
@@ -41,7 +72,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/andrets/test-env:latest
+      image: ghcr.io/andrets/cross-browser-tests:latest
     steps:
       - name: Download all results
         uses: actions/download-artifact@v4

@@ -12,11 +12,12 @@ import helpers as hp
 import tests.helpers as th
 
 
-class BaseTest(unittest.TestCase):
+class SendMessageWithTextTest(unittest.TestCase):
     driver: webdriver.Remote
 
     @classmethod
-    def _setup_driver(cls, browser):
+    def setUpClass(cls):
+        browser = os.environ.get("BROWSER", "chrome").lower()
         if browser not in th.DRIVERS:
             raise ValueError(f"Unsupported browser: {browser}")
         cls.driver = th.DRIVERS[browser]()
@@ -28,7 +29,7 @@ class BaseTest(unittest.TestCase):
         if cls.driver:
             cls.driver.quit()
 
-    def tep_01_registration(self):
+    def test_01_registration(self):
         driver = self.driver
         driver.get(hp.url)
         time.sleep(hp.time_max)
@@ -76,20 +77,6 @@ class BaseTest(unittest.TestCase):
                 attachment_type=allure.attachment_type.PNG,
             )
             self.fail(f"The test failed: {str(e)}")
-
-
-class SendMessageWithFile(BaseTest):
-    @classmethod
-    def setUpClass(cls):
-        browser = os.environ.get("BROWSER", "chrome").lower()
-        cls._setup_driver(browser)
-
-
-def take_screenshot(driver, name):
-    screenshot_dir = "screenshots"
-    os.makedirs(screenshot_dir, exist_ok=True)
-    screenshot_path = os.path.join(screenshot_dir, f"{name}.png")
-    driver.save_screenshot(screenshot_path)
 
 
 if __name__ == "__main__":

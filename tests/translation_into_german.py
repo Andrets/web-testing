@@ -4,6 +4,7 @@ import string
 import time
 import unittest
 
+import allure
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
@@ -14,7 +15,7 @@ import helpers as hp
 import tests.helpers as th
 
 
-class BaseTest(unittest.TestCase):
+class TranslationIntoGermanTest(unittest.TestCase):
     driver: webdriver.Remote
 
     @classmethod
@@ -30,7 +31,7 @@ class BaseTest(unittest.TestCase):
         if cls.driver:
             cls.driver.quit()
 
-    def tep_01_registration(self):
+    def test_01_registration(self):
         driver = self.driver
         driver.get(hp.url)
         time.sleep(hp.time_max)
@@ -323,15 +324,12 @@ class BaseTest(unittest.TestCase):
             print(f"Current data: {actual_text}")
 
         except Exception as e:
-            take_screenshot(driver, "Chrome Registration error")
+            allure.attach(
+                driver.get_screenshot_as_png(),
+                name="error_screenshot",
+                attachment_type=allure.attachment_type.PNG,
+            )
             self.fail(f"The test failed: {str(e)}")
-
-
-def take_screenshot(driver, name):
-    screenshot_dir = "screenshots"
-    os.makedirs(screenshot_dir, exist_ok=True)
-    screenshot_path = os.path.join(screenshot_dir, f"{name}.png")
-    driver.save_screenshot(screenshot_path)
 
 
 if __name__ == "__main__":

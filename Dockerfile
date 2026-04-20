@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     openjdk-11-jre-headless \
     xvfb \
-    libasound2t64 \
+    libasound2 \
     libgbm1 \
     libatk-bridge2.0-0 \
     libx11-xcb1 \

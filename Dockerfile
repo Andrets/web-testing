@@ -44,16 +44,15 @@ RUN pip install --upgrade pip && \
     pip install -r /tmp/requirements.txt
 
 # Установка Chrome и ChromeDriver
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
-RUN apt-get update && apt-get -y install google-chrome-stable
-
-RUN echo "Installing ChromeDriver 139.0.7258.66" && \
-    wget -q "https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.66/linux64/chromedriver-linux64.zip" && \
+RUN echo "Installing Chrome + ChromeDriver" && \
+    CHROME_VERSION=139.0.7258.66 && \
+    wget -q https://storage.googleapis.com/chrome-for-testing-public/${CHROME_VERSION}/linux64/chrome-linux64.zip && \
+    wget -q https://storage.googleapis.com/chrome-for-testing-public/${CHROME_VERSION}/linux64/chromedriver-linux64.zip && \
+    unzip chrome-linux64.zip && \
     unzip chromedriver-linux64.zip && \
+    mv chrome-linux64 /opt/chrome && \
     mv chromedriver-linux64/chromedriver /usr/local/bin/ && \
-    chmod +x /usr/local/bin/chromedriver && \
-    rm -rf chromedriver-linux64*
+    chmod +x /usr/local/bin/chromedriver
 
 #Installing Edge
 RUN wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_138.0.3351.121-1_amd64.deb" && \
@@ -70,8 +69,12 @@ RUN wget -q "https://msedgedriver.microsoft.com/138.0.3351.121/edgedriver_linux6
 RUN which microsoft-edge-stable || echo "Microsoft Edge is not installed!"
 
 #Installing Firefox and GeckoDriver
-RUN apt-get update && apt-get install -y firefox && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y software-properties-common && \
+    add-apt-repository -y ppa:mozillateam/ppa && \
+    echo 'Package: *' > /etc/apt/preferences.d/mozilla && \
+    echo 'Pin: release o=LP-PPA-mozillateam' >> /etc/apt/preferences.d/mozilla && \
+    echo 'Pin-Priority: 1001' >> /etc/apt/preferences.d/mozilla && \
+    apt-get update && apt-get install -y firefox
 
 RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-linux64.tar.gz" && \
     tar -xzf geckodriver-v0.36.0-linux64.tar.gz -C /usr/local/bin/ && \

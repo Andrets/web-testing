@@ -1,3 +1,5 @@
+import os
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.edge.options import Options as EdgeOptions
@@ -18,6 +20,7 @@ def create_firefox():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.binary_location = "/opt/firefox/firefox"
+    os.environ["MOZ_HEADLESS"] = "1"
     return webdriver.Firefox(options=options)
 
 

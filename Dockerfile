@@ -25,6 +25,9 @@ RUN apt-get update && apt-get install -y \
     libx11-xcb1 \
     xdg-utils \
     fonts-liberation \
+    libfontconfig1 \
+    libxrender1 \
+    libxt6 \
     libdbus-glib-1-2 \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
@@ -71,7 +74,8 @@ RUN apt-get update && apt-get install -y xz-utils curl && \
     ln -s /opt/firefox/firefox /usr/bin/firefox && \
     rm firefox.tar.xz
 
-RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-linux64.tar.gz" && \
+RUN GECKODRIVER_VER=$(curl -s https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-linux64.tar.gz | grep 'tag_name' | cut -d\" -f4) && \
+    wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-linux64.tar.gz" && \
     tar -xzf geckodriver-v0.36.0-linux64.tar.gz -C /usr/local/bin/ && \
     chmod +x /usr/local/bin/geckodriver && \
     rm geckodriver-v0.36.0-linux64.tar.gz

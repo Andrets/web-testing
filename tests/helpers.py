@@ -1,49 +1,36 @@
 import os
 
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options as ChromeOptions
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.edge.options import Options as EdgeOptions
-from selenium.webdriver.edge.service import Service as EdgeService
-from selenium.webdriver.firefox.options import Options as FirefoxOptions
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from webdriver_manager.firefox import GeckoDriverManager
 
 
 def create_chrome():
-    options = ChromeOptions()
-    options.add_argument("--headless=new")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-
-    if os.environ.get("GITHUB_ACTIONS"):
-        return webdriver.Remote(
-            command_executor="http://localhost:4444/wd/hub", options=options
-        )
-    return webdriver.Chrome(options=options)
+    chrome_options = webdriver.ChromeOptions()
+    """Connect to Chrome via Selenium Grid"""
+    hub_url = os.environ.get("SELENIUM_HUB", "http://localhost:4444")
+    chrome_options.set_capability("browserName", "chrome")
+    return webdriver.Remote(
+        command_executor=f"{hub_url}/wd/hub", options=chrome_options
+    )
 
 
 def create_firefox():
-    options = FirefoxOptions()
-    options.add_argument("--headless")
-
-    if os.environ.get("GITHUB_ACTIONS"):
-        return webdriver.Remote(
-            command_executor="http://localhost:4445/wd/hub", options=options
-        )
-    return webdriver.Firefox(options=options)
+    firefox_options = webdriver.FirefoxOptions()
+    """Connect to Firefox via Selenium Grid"""
+    hub_url = os.environ.get("SELENIUM_HUB", "http://localhost:4444")
+    firefox_options.set_capability("browserName", "firefox")
+    firefox_options.set_capability("acceptInsecureCerts", True)
+    firefox_options.set_capability("moz:debuggerAddress", True)
+    return webdriver.Remote(
+        command_executor=f"{hub_url}/wd/hub", options=firefox_options
+    )
 
 
 def create_edge():
-    options = EdgeOptions()
-    options.add_argument("--headless")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    if os.environ.get("GITHUB_ACTIONS"):
-        return webdriver.Remote(
-            command_executor="http://localhost:4446/wd/hub", options=options
-        )
-    return webdriver.Edge(options=options)
+    edge_options = webdriver.EdgeOptions()
+    """Connect to Edge via Selenium Grid"""
+    hub_url = os.environ.get("SELENIUM_HUB", "http://localhost:4444")
+    edge_options.set_capability("browserName", "MicrosoftEdge")
+    return webdriver.Remote(command_executor=f"{hub_url}/wd/hub", options=edge_options)
 
 
 DRIVERS = {

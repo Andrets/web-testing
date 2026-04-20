@@ -48,32 +48,60 @@ jobs:
         browser: [chrome, firefox, edge]
 
     services:
-      chrome:
-        image: ${{ matrix.browser == 'chrome' && 'selenium/standalone-chrome:latest' || '' }}
+      selenium:
+        image: selenium/hub:latest
         ports:
           - 4444:4444
+
+      chrome:
+        image: selenium/node-chrome:latest
+        env:
+          SE_EVENT_BUS_HOST: selenium
+          SE_EVENT_BUS_PUBLISH_PORT: 4442
+          SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+          SE_NODE_HOST: chrome
+          SE_NODE_PORT: 5555
+
       firefox:
-        image: ${{ matrix.browser == 'firefox' && 'selenium/standalone-firefox:latest' || '' }}
-        ports:
-          - 4445:4444
+        image: selenium/node-firefox:latest
+        env:
+          SE_EVENT_BUS_HOST: selenium
+          SE_EVENT_BUS_PUBLISH_PORT: 4442
+          SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+          SE_NODE_HOST: firefox
+          SE_NODE_PORT: 5555
+
       edge:
-        image: ${{ matrix.browser == 'edge' && 'selenium/standalone-edge:latest' || '' }}
-        ports:
-          - 4446:4444
+        image: selenium/node-edge:latest
+        env:
+          SE_EVENT_BUS_HOST: selenium
+          SE_EVENT_BUS_PUBLISH_PORT: 4442
+          SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
+          SE_NODE_HOST: edge
+          SE_NODE_PORT: 5555
 
     container:
       image: ghcr.io/andrets/cross-browser-tests:latest
-      options: --user root
+      options: --network host --user root
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Wait for Selenium
+        run: |
+          for i in {1..30}; do
+            curl -s http://localhost:4444/wd/hub/status && echo "Selenium is ready!" && break
+            echo "Waiting for Selenium..."
+            sleep 2
+          done
+
       - name: Run tests
         env:
           BROWSER: ${{ matrix.browser }}
+          SELENIUM_HUB: http://localhost:4444
         run: |
-          pytest tests/ --alluredir=allure-results-${{ matrix.browser }}
+          pytest tests/ --alluredir=allure-results-${{ matrix.browser }} -v
 
       - name: Upload results
         uses: actions/upload-artifact@v4

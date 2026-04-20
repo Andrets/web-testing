@@ -19,7 +19,7 @@ def create_firefox():
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    options.binary_location = "/opt/firefox/firefox"
+    options.binary_location = "/usr/bin/firefox"
     os.environ["MOZ_HEADLESS"] = "1"
     return webdriver.Firefox(options=options)
 

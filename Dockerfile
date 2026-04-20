@@ -58,7 +58,10 @@ RUN wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edg
 RUN which microsoft-edge-stable || echo "Microsoft Edge is not installed!"
 
 #Installing Firefox
-RUN apt-get update && apt-get install -y firefox
+RUN apt-get update && apt-get install -y \
+    firefox-esr \
+    firefox-geckodriver \
+    && rm -rf /var/lib/apt/lists/*
 
 # DEBUG browsers
 RUN echo "Checking browsers..." && \

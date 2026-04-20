@@ -1,3 +1,5 @@
+import os
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -13,18 +15,23 @@ def create_chrome():
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--window-size=1920,1080")
-    service = ChromeService()
-    return webdriver.Chrome(service=service, options=options)
+
+    if os.environ.get("GITHUB_ACTIONS"):
+        return webdriver.Remote(
+            command_executor="http://chrome:4444/wd/hub", options=options
+        )
+    return webdriver.Chrome(options=options)
 
 
 def create_firefox():
     options = FirefoxOptions()
     options.add_argument("--headless")
-    return webdriver.Firefox(
-        service=FirefoxService(GeckoDriverManager().install()), options=options
-    )
+
+    if os.environ.get("GITHUB_ACTIONS"):
+        return webdriver.Remote(
+            command_executor="http://firefox:4444/wd/hub", options=options
+        )
+    return webdriver.Firefox(options=options)
 
 
 def create_edge():
@@ -32,10 +39,11 @@ def create_edge():
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--window-size=1920,1080")
-    options.add_argument("--user-data-dir=/tmp/edge-profile")
-    service = EdgeService(executable_path="/usr/local/bin/msedgedriver")
-    return webdriver.Edge(service=service, options=options)
+    if os.environ.get("GITHUB_ACTIONS"):
+        return webdriver.Remote(
+            command_executor="http://edge:4444/wd/hub", options=options
+        )
+    return webdriver.Edge(options=options)
 
 
 DRIVERS = {

@@ -1,6 +1,28 @@
 {
-  "total" : 1,
+  "total" : 3,
   "items" : [ {
+    "uid" : "407ca2cce9f0c80e52a5d9d676900a93",
+    "name" : "test_send_message_with_file",
+    "statistic" : {
+      "failed" : 3,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 3
+    }
+  }, {
+    "uid" : "403447acc4e6b3ad8df73a416c9852bf",
+    "name" : "translation_into_german",
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
     "uid" : "76228e3bac2d17e005100b187a2c8c84",
     "name" : "Search_apple_site",
     "statistic" : {

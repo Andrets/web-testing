@@ -2,18 +2,35 @@
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "name" : "timeline",
   "children" : [ {
-    "name" : "546272e3e842",
+    "name" : "7ad128e18312",
     "children" : [ {
       "name" : "157-MainThread",
       "children" : [ {
-        "name" : "test_search_apple_site",
-        "uid" : "404005655914dc39",
-        "parentUid" : "a9dc168d8edc4c2c75b176cb1cb13109",
-        "status" : "passed",
+        "name" : "test_01_registration",
+        "uid" : "bce06a9a7c55a767",
+        "parentUid" : "52db96953790cf21ddd02ec82acb9b8f",
+        "status" : "failed",
         "time" : {
-          "start" : 1776719537901,
-          "stop" : 1776719538973,
-          "duration" : 1072
+          "start" : 1776721554773,
+          "stop" : 1776721591248,
+          "duration" : 36475
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 2,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_01_registration",
+        "uid" : "8ae82eb9a0557e9e",
+        "parentUid" : "52db96953790cf21ddd02ec82acb9b8f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776721532421,
+          "stop" : 1776721552061,
+          "duration" : 19640
         },
         "flaky" : false,
         "newFailed" : false,
@@ -21,24 +38,16 @@
         "newBroken" : false,
         "retriesCount" : 0,
         "retriesStatusChange" : false,
-        "parameters" : [ "'edge'" ]
-      } ],
-      "uid" : "a9dc168d8edc4c2c75b176cb1cb13109"
-    } ],
-    "uid" : "7ce2f2ce6f55ef0342d5de66c8a44519"
-  }, {
-    "name" : "b46e9b32d943",
-    "children" : [ {
-      "name" : "157-MainThread",
-      "children" : [ {
+        "parameters" : [ "'firefox'" ]
+      }, {
         "name" : "test_search_apple_site",
-        "uid" : "9631e5be58512798",
-        "parentUid" : "1f7af87176956e36a88c311ab259f4b6",
+        "uid" : "7196880d014bbf95",
+        "parentUid" : "52db96953790cf21ddd02ec82acb9b8f",
         "status" : "passed",
         "time" : {
-          "start" : 1776719517870,
-          "stop" : 1776719518695,
-          "duration" : 825
+          "start" : 1776721528983,
+          "stop" : 1776721529670,
+          "duration" : 687
         },
         "flaky" : false,
         "newFailed" : false,
@@ -48,22 +57,56 @@
         "retriesStatusChange" : false,
         "parameters" : [ "'firefox'" ]
       } ],
-      "uid" : "1f7af87176956e36a88c311ab259f4b6"
+      "uid" : "52db96953790cf21ddd02ec82acb9b8f"
     } ],
-    "uid" : "8cd5258aee9293164e4481ee803a1bf7"
+    "uid" : "1b4ce534dd525aa4f9b3fff0a2a2d5a0"
   }, {
-    "name" : "a4f717acc46b",
+    "name" : "1b9e267e7293",
     "children" : [ {
-      "name" : "158-MainThread",
+      "name" : "157-MainThread",
       "children" : [ {
+        "name" : "test_01_registration",
+        "uid" : "ea2ab1f76418244",
+        "parentUid" : "7e35ea5737c43b3d34efc6241a2e8956",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776721550147,
+          "stop" : 1776721587339,
+          "duration" : 37192
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
         "name" : "test_search_apple_site",
-        "uid" : "2954002b8a38eebb",
-        "parentUid" : "70f1d1595e434197a3d5a58bcde9cac7",
+        "uid" : "9dbffcd391847784",
+        "parentUid" : "7e35ea5737c43b3d34efc6241a2e8956",
         "status" : "passed",
         "time" : {
-          "start" : 1776719523059,
-          "stop" : 1776719523861,
-          "duration" : 802
+          "start" : 1776721527874,
+          "stop" : 1776721528874,
+          "duration" : 1000
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'chrome'" ]
+      }, {
+        "name" : "test_01_registration",
+        "uid" : "205e956f6ae108f5",
+        "parentUid" : "7e35ea5737c43b3d34efc6241a2e8956",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776721529390,
+          "stop" : 1776721549614,
+          "duration" : 20224
         },
         "flaky" : false,
         "newFailed" : false,
@@ -73,8 +116,67 @@
         "retriesStatusChange" : false,
         "parameters" : [ "'chrome'" ]
       } ],
-      "uid" : "70f1d1595e434197a3d5a58bcde9cac7"
+      "uid" : "7e35ea5737c43b3d34efc6241a2e8956"
     } ],
-    "uid" : "af5454e00aa94a3ec7a3ed96dd59700b"
+    "uid" : "828823e6c897a39f0add5c70ca1da184"
+  }, {
+    "name" : "4e30279334a3",
+    "children" : [ {
+      "name" : "157-MainThread",
+      "children" : [ {
+        "name" : "test_search_apple_site",
+        "uid" : "fef67dc36d219916",
+        "parentUid" : "af273f20260f8ff8aa6eb57d2ff5782f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1776721529762,
+          "stop" : 1776721530602,
+          "duration" : 840
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'edge'" ]
+      }, {
+        "name" : "test_01_registration",
+        "uid" : "ca683bdea0c57452",
+        "parentUid" : "af273f20260f8ff8aa6eb57d2ff5782f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776721531249,
+          "stop" : 1776721549630,
+          "duration" : 18381
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'edge'" ]
+      }, {
+        "name" : "test_01_registration",
+        "uid" : "f4ead404f5d59c6b",
+        "parentUid" : "af273f20260f8ff8aa6eb57d2ff5782f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776721550311,
+          "stop" : 1776721587772,
+          "duration" : 37461
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "af273f20260f8ff8aa6eb57d2ff5782f"
+    } ],
+    "uid" : "950aeec6d576357cd6d34a05755f8195"
   } ]
 }

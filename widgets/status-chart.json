@@ -1,30 +1,70 @@
 [ {
-  "uid" : "404005655914dc39",
+  "uid" : "205e956f6ae108f5",
+  "name" : "test_01_registration",
+  "time" : {
+    "start" : 1776721529390,
+    "stop" : 1776721549614,
+    "duration" : 20224
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "8ae82eb9a0557e9e",
+  "name" : "test_01_registration",
+  "time" : {
+    "start" : 1776721532421,
+    "stop" : 1776721552061,
+    "duration" : 19640
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "bce06a9a7c55a767",
+  "name" : "test_01_registration",
+  "time" : {
+    "start" : 1776721554773,
+    "stop" : 1776721591248,
+    "duration" : 36475
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "9dbffcd391847784",
   "name" : "test_search_apple_site",
   "time" : {
-    "start" : 1776719537901,
-    "stop" : 1776719538973,
-    "duration" : 1072
+    "start" : 1776721527874,
+    "stop" : 1776721528874,
+    "duration" : 1000
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "2954002b8a38eebb",
+  "uid" : "7196880d014bbf95",
   "name" : "test_search_apple_site",
   "time" : {
-    "start" : 1776719523059,
-    "stop" : 1776719523861,
-    "duration" : 802
+    "start" : 1776721528983,
+    "stop" : 1776721529670,
+    "duration" : 687
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "9631e5be58512798",
+  "uid" : "ca683bdea0c57452",
+  "name" : "test_01_registration",
+  "time" : {
+    "start" : 1776721531249,
+    "stop" : 1776721549630,
+    "duration" : 18381
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "fef67dc36d219916",
   "name" : "test_search_apple_site",
   "time" : {
-    "start" : 1776719517870,
-    "stop" : 1776719518695,
-    "duration" : 825
+    "start" : 1776721529762,
+    "stop" : 1776721530602,
+    "duration" : 840
   },
   "status" : "passed",
   "severity" : "normal"

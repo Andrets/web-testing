@@ -1,0 +1,10 @@
+first_name: Joseph
+last_name: Miller
+birth_date: 2000-01-18
+city: Chicago
+state: IL
+street: 8853 Pine Rd
+postal_code: 61680
+phone: 15285890957
+email: test_gyefvime@example.com
+password: abAhn37%X

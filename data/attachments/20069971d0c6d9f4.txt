@@ -1,0 +1,10 @@
+first_name: John
+last_name: Smith
+birth_date: 1990-03-23
+city: Philadelphia
+state: PA
+street: 5676 Maple Dr
+postal_code: 87654
+phone: 12554761421
+email: test_x1u9je2j@example.com
+password: v7aKK$i1q

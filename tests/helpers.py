@@ -17,7 +17,7 @@ def create_firefox():
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    options.binary_location = "/usr/bin/firefox-esr"
+    options.binary_location = "/usr/bin/firefox"
     return webdriver.Firefox(options=options)
 
 

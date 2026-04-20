@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/${{ github.repository_owner }}/test-env:latest
+      image: ghcr.io/andrets/test-env:latest
       options: --user root
     strategy:
       fail-fast: false
@@ -41,7 +41,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/${{ github.repository_owner }}/test-env:latest
+      image: ghcr.io/andrets/test-env:latest
     steps:
       - name: Download all results
         uses: actions/download-artifact@v4

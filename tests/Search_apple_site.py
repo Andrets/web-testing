@@ -10,12 +10,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 import tests.helpers as th
 
 
-class BaseTest(unittest.TestCase):
+class BaseSearchAppleSiteTest(unittest.TestCase):
     driver: webdriver.Remote
+    browser_name = "chrome"
 
     @classmethod
-    def setUpClass(cls):
-        browser = os.environ.get("BROWSER", "chrome").lower()
+    def _setup_driver(cls, browser):
+        cls.browser_name = browser
         if browser not in th.DRIVERS:
             raise ValueError(f"Unsupported browser: {browser}")
         cls.driver = th.DRIVERS[browser]()
@@ -27,13 +28,6 @@ class BaseTest(unittest.TestCase):
         driver = self.driver
         wait = WebDriverWait(driver, 20)
         driver.get("https://www.apple.com/")
-
-        # Сохраняем скриншот для отладки
-        allure.attach(
-            driver.get_screenshot_as_png(),
-            name="apple_homepage",
-            attachment_type=allure.attachment_type.PNG,
-        )
 
         try:
             # Дождитесь завершения загрузки страницы
@@ -47,18 +41,32 @@ class BaseTest(unittest.TestCase):
             wait.until(
                 EC.visibility_of_element_located((By.CSS_SELECTOR, "nav.globalnav"))
             )
-        except Exception as e:
+        except AssertionError as e:
             # Сохраняем скриншот при ошибке
-            allure.attach(
-                driver.get_screenshot_as_png(),
-                name="error_screenshot",
-                attachment_type=allure.attachment_type.PNG,
-            )
-            raise e
+            print(e)
+            self.fail("The test failed: an authorization issue")
 
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
+
+
+class ChromeSearch(BaseSearchAppleSiteTest):
+    @classmethod
+    def setUpClass(cls):
+        cls._setup_driver("chrome")
+
+
+class EdgeSearch(BaseSearchAppleSiteTest):
+    @classmethod
+    def setUpClass(cls):
+        cls._setup_driver("edge")
+
+
+class FirefoxSearch(BaseSearchAppleSiteTest):
+    @classmethod
+    def setUpClass(cls):
+        cls._setup_driver("firefox")
 
 
 if __name__ == "__main__":

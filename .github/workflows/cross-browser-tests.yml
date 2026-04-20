@@ -50,10 +50,16 @@ jobs:
     services:
       chrome:
         image: ${{ matrix.browser == 'chrome' && 'selenium/standalone-chrome:latest' || '' }}
+        ports:
+          - 4444:4444
       firefox:
         image: ${{ matrix.browser == 'firefox' && 'selenium/standalone-firefox:latest' || '' }}
+        ports:
+          - 4445:4444
       edge:
         image: ${{ matrix.browser == 'edge' && 'selenium/standalone-edge:latest' || '' }}
+        ports:
+          - 4446:4444
 
     container:
       image: ghcr.io/andrets/cross-browser-tests:latest

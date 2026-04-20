@@ -18,7 +18,7 @@ def create_chrome():
 
     if os.environ.get("GITHUB_ACTIONS"):
         return webdriver.Remote(
-            command_executor="http://chrome:4444/wd/hub", options=options
+            command_executor="http://localhost:4444/wd/hub", options=options
         )
     return webdriver.Chrome(options=options)
 
@@ -29,7 +29,7 @@ def create_firefox():
 
     if os.environ.get("GITHUB_ACTIONS"):
         return webdriver.Remote(
-            command_executor="http://firefox:4444/wd/hub", options=options
+            command_executor="http://localhost:4445/wd/hub", options=options
         )
     return webdriver.Firefox(options=options)
 
@@ -41,7 +41,7 @@ def create_edge():
     options.add_argument("--disable-dev-shm-usage")
     if os.environ.get("GITHUB_ACTIONS"):
         return webdriver.Remote(
-            command_executor="http://edge:4444/wd/hub", options=options
+            command_executor="http://localhost:4446/wd/hub", options=options
         )
     return webdriver.Edge(options=options)
 

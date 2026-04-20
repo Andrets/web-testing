@@ -120,6 +120,7 @@ jobs:
       contents: write
       pages: write
       id-token: write
+    if: always()
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/andrets/cross-browser-tests:latest

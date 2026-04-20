@@ -85,7 +85,7 @@ ENV DISPLAY=:99
 RUN wget -qO allure.tar.gz https://github.com/allure-framework/allure2/releases/download/2.17.2/allure-2.17.2.tgz \
     && tar -xzf allure.tar.gz -C /opt/ \
     && ln -s /opt/allure-2.17.2/bin/allure /usr/bin/allure \
-    && rm allure.tgz
+    && rm allure.tar.gz
 
 #Adding Allure to the PATH
 ENV PATH="/opt/allure/bin:${PATH}"

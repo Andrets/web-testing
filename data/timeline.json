@@ -2,18 +2,43 @@
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "name" : "timeline",
   "children" : [ {
-    "name" : "3e3f87ad1e91",
+    "name" : "546272e3e842",
     "children" : [ {
       "name" : "157-MainThread",
       "children" : [ {
         "name" : "test_search_apple_site",
-        "uid" : "a6ee6b5d339bd0f",
-        "parentUid" : "93b3487cd6e826301efdb461f543f5fc",
+        "uid" : "404005655914dc39",
+        "parentUid" : "a9dc168d8edc4c2c75b176cb1cb13109",
         "status" : "passed",
         "time" : {
-          "start" : 1776719064335,
-          "stop" : 1776719065099,
-          "duration" : 764
+          "start" : 1776719537901,
+          "stop" : 1776719538973,
+          "duration" : 1072
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'edge'" ]
+      } ],
+      "uid" : "a9dc168d8edc4c2c75b176cb1cb13109"
+    } ],
+    "uid" : "7ce2f2ce6f55ef0342d5de66c8a44519"
+  }, {
+    "name" : "b46e9b32d943",
+    "children" : [ {
+      "name" : "157-MainThread",
+      "children" : [ {
+        "name" : "test_search_apple_site",
+        "uid" : "9631e5be58512798",
+        "parentUid" : "1f7af87176956e36a88c311ab259f4b6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1776719517870,
+          "stop" : 1776719518695,
+          "duration" : 825
         },
         "flaky" : false,
         "newFailed" : false,
@@ -23,8 +48,33 @@
         "retriesStatusChange" : false,
         "parameters" : [ "'firefox'" ]
       } ],
-      "uid" : "93b3487cd6e826301efdb461f543f5fc"
+      "uid" : "1f7af87176956e36a88c311ab259f4b6"
     } ],
-    "uid" : "7682af265c70c950176199db3a363cc3"
+    "uid" : "8cd5258aee9293164e4481ee803a1bf7"
+  }, {
+    "name" : "a4f717acc46b",
+    "children" : [ {
+      "name" : "158-MainThread",
+      "children" : [ {
+        "name" : "test_search_apple_site",
+        "uid" : "2954002b8a38eebb",
+        "parentUid" : "70f1d1595e434197a3d5a58bcde9cac7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1776719523059,
+          "stop" : 1776719523861,
+          "duration" : 802
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'chrome'" ]
+      } ],
+      "uid" : "70f1d1595e434197a3d5a58bcde9cac7"
+    } ],
+    "uid" : "af5454e00aa94a3ec7a3ed96dd59700b"
   } ]
 }

@@ -1,2 +1,4 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Apr 20 21:04:24 GMT 2026","Mon Apr 20 21:04:25 GMT 2026","764","","Search_apple_site","SearchAppleSiteTest","","","test_search_apple_site","Open Apple.com and check having navigation bar"
+"passed","Mon Apr 20 21:12:17 GMT 2026","Mon Apr 20 21:12:18 GMT 2026","1072","","Search_apple_site","SearchAppleSiteTest","","","test_search_apple_site","Open Apple.com and check having navigation bar"
+"passed","Mon Apr 20 21:12:03 GMT 2026","Mon Apr 20 21:12:03 GMT 2026","802","","Search_apple_site","SearchAppleSiteTest","","","test_search_apple_site","Open Apple.com and check having navigation bar"
+"passed","Mon Apr 20 21:11:57 GMT 2026","Mon Apr 20 21:11:58 GMT 2026","825","","Search_apple_site","SearchAppleSiteTest","","","test_search_apple_site","Open Apple.com and check having navigation bar"

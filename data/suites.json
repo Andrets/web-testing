@@ -7,13 +7,13 @@
       "name" : "SearchAppleSiteTest",
       "children" : [ {
         "name" : "test_search_apple_site",
-        "uid" : "a6ee6b5d339bd0f",
+        "uid" : "9631e5be58512798",
         "parentUid" : "85caed28a484876432fc7fa185e0922e",
         "status" : "passed",
         "time" : {
-          "start" : 1776719064335,
-          "stop" : 1776719065099,
-          "duration" : 764
+          "start" : 1776719517870,
+          "stop" : 1776719518695,
+          "duration" : 825
         },
         "flaky" : false,
         "newFailed" : false,
@@ -22,6 +22,40 @@
         "retriesCount" : 0,
         "retriesStatusChange" : false,
         "parameters" : [ "'firefox'" ]
+      }, {
+        "name" : "test_search_apple_site",
+        "uid" : "2954002b8a38eebb",
+        "parentUid" : "85caed28a484876432fc7fa185e0922e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1776719523059,
+          "stop" : 1776719523861,
+          "duration" : 802
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'chrome'" ]
+      }, {
+        "name" : "test_search_apple_site",
+        "uid" : "404005655914dc39",
+        "parentUid" : "85caed28a484876432fc7fa185e0922e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1776719537901,
+          "stop" : 1776719538973,
+          "duration" : 1072
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'edge'" ]
       } ],
       "uid" : "85caed28a484876432fc7fa185e0922e"
     } ],

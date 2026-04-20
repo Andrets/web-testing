@@ -1,12 +1,12 @@
 {
-  "uid" : "a6ee6b5d339bd0f",
+  "uid" : "404005655914dc39",
   "name" : "test_search_apple_site",
   "fullName" : "Search_apple_site.SearchAppleSiteTest#test_search_apple_site",
-  "historyId" : "f48e367c4d064d98a3351a1a8a626b04",
+  "historyId" : "114d82232d49577efb0831ecd2979b67",
   "time" : {
-    "start" : 1776719064335,
-    "stop" : 1776719065099,
-    "duration" : 764
+    "start" : 1776719537901,
+    "stop" : 1776719538973,
+    "duration" : 1072
   },
   "description" : "Open Apple.com and check having navigation bar",
   "descriptionHtml" : "<p>Open Apple.com and check having navigation bar</p>\n",
@@ -20,9 +20,9 @@
   "beforeStages" : [ {
     "name" : "_unittest_setUpClass_fixture_SearchAppleSiteTest",
     "time" : {
-      "start" : 1776719061880,
-      "stop" : 1776719064334,
-      "duration" : 2454
+      "start" : 1776719536711,
+      "stop" : 1776719537901,
+      "duration" : 1190
     },
     "status" : "passed",
     "steps" : [ ],
@@ -36,9 +36,9 @@
   "afterStages" : [ {
     "name" : "_unittest_setUpClass_fixture_SearchAppleSiteTest::0",
     "time" : {
-      "start" : 1776719065100,
-      "stop" : 1776719065807,
-      "duration" : 707
+      "start" : 1776719538974,
+      "stop" : 1776719539058,
+      "duration" : 84
     },
     "status" : "passed",
     "steps" : [ ],
@@ -57,7 +57,7 @@
     "value" : "SearchAppleSiteTest"
   }, {
     "name" : "host",
-    "value" : "3e3f87ad1e91"
+    "value" : "546272e3e842"
   }, {
     "name" : "thread",
     "value" : "157-MainThread"
@@ -76,7 +76,7 @@
   } ],
   "parameters" : [ {
     "name" : "browser",
-    "value" : "'firefox'"
+    "value" : "'edge'"
   } ],
   "links" : [ ],
   "hidden" : false,
@@ -87,6 +87,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "a6ee6b5d339bd0f.json",
-  "parameterValues" : [ "'firefox'" ]
+  "source" : "404005655914dc39.json",
+  "parameterValues" : [ "'edge'" ]
 }

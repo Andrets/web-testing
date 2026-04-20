@@ -116,6 +116,10 @@ jobs:
 
   report:
     needs: test
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/andrets/cross-browser-tests:latest

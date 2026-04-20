@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y \
     libx11-xcb1 \
     xdg-utils \
     fonts-liberation \
+    libdbus-glib-1-2 \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
@@ -54,6 +55,12 @@ RUN wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edg
     dpkg -i microsoft-edge-stable_138.0.3351.121-1_amd64.deb || apt-get -f install -y && \
     rm microsoft-edge-stable_138.0.3351.121-1_amd64.deb
 
+#Installing EdgeDriver
+RUN wget -q "https://msedgedriver.microsoft.com/138.0.3351.121/edgedriver_linux64.zip" && \
+    unzip edgedriver_linux64.zip -d /usr/local/bin/ && \
+    chmod +x /usr/local/bin/msedgedriver && \
+    rm edgedriver_linux64.zip
+
 #Checking the Edge installation
 RUN which microsoft-edge-stable || echo "Microsoft Edge is not installed!"
 
@@ -63,6 +70,11 @@ RUN apt-get update && apt-get install -y xz-utils curl && \
     tar -xf firefox.tar.xz -C /opt/ && \
     ln -s /opt/firefox/firefox /usr/bin/firefox && \
     rm firefox.tar.xz
+
+RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-linux64.tar.gz" && \
+    tar -xzf geckodriver-v0.36.0-linux64.tar.gz -C /usr/local/bin/ && \
+    chmod +x /usr/local/bin/geckodriver && \
+    rm geckodriver-v0.36.0-linux64.tar.gz
 
 # DEBUG browsers
 RUN echo "Checking browsers..." && \

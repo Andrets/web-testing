@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     libxi6 \
     libxtst6 \
     libgtk-3-0 \
-    libtk-3-common \
+    libgtk-3-common \
     libpulse0 \
     libgstreamer1.0-0 \
     libgstreamer-plugins-base1.0-0 \

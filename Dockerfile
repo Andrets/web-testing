@@ -58,11 +58,11 @@ RUN wget -q "https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edg
 RUN which microsoft-edge-stable || echo "Microsoft Edge is not installed!"
 
 #Installing Firefox
-RUN wget -q "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US" -O firefox.tar.bz2 && \
-    tar -xjf firefox.tar.bz2 && \
-    mv firefox /opt/firefox && \
+RUN apt-get update && apt-get install -y xz-utils curl && \
+    curl -L "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US" -o firefox.tar.xz && \
+    tar -xf firefox.tar.xz -C /opt/ && \
     ln -s /opt/firefox/firefox /usr/bin/firefox && \
-    rm firefox.tar.bz2
+    rm firefox.tar.xz
 
 # DEBUG browsers
 RUN echo "Checking browsers..." && \

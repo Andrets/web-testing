@@ -60,6 +60,14 @@ RUN which microsoft-edge-stable || echo "Microsoft Edge is not installed!"
 #Installing Firefox
 RUN apt-get update && apt-get install -y firefox
 
+# DEBUG browsers
+RUN echo "Checking browsers..." && \
+    which firefox || echo "Firefox not found" && \
+    firefox --version || echo "Firefox cannot run" && \
+    which microsoft-edge || echo "Edge not found" && \
+    which microsoft-edge-stable || echo "Edge-stable not found" && \
+    microsoft-edge-stable --version || echo "Edge cannot run"
+
 #Настраиваем переменные окружения для headless режима
 ENV DISPLAY=:99
 

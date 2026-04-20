@@ -10,13 +10,11 @@ from selenium.webdriver.support.wait import WebDriverWait
 import tests.helpers as th
 
 
-class BaseSearchAppleSiteTest(unittest.TestCase):
+class BaseTest(unittest.TestCase):
     driver: webdriver.Remote
-    browser_name = "chrome"
 
     @classmethod
     def _setup_driver(cls, browser):
-        cls.browser_name = browser
         if browser not in th.DRIVERS:
             raise ValueError(f"Unsupported browser: {browser}")
         cls.driver = th.DRIVERS[browser]()
@@ -51,22 +49,11 @@ class BaseSearchAppleSiteTest(unittest.TestCase):
         cls.driver.quit()
 
 
-class ChromeSearch(BaseSearchAppleSiteTest):
+class AppleSiteSearch(BaseTest):
     @classmethod
     def setUpClass(cls):
-        cls._setup_driver("chrome")
-
-
-class EdgeSearch(BaseSearchAppleSiteTest):
-    @classmethod
-    def setUpClass(cls):
-        cls._setup_driver("edge")
-
-
-class FirefoxSearch(BaseSearchAppleSiteTest):
-    @classmethod
-    def setUpClass(cls):
-        cls._setup_driver("firefox")
+        browser = os.environ.get("BROWSER", "chrome")
+        cls._setup_driver(browser)
 
 
 if __name__ == "__main__":

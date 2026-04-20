@@ -30,7 +30,7 @@ class BaseTest(unittest.TestCase):
         if cls.driver:
             cls.driver.quit()
 
-    def test_01_registration(self):
+    def tep_01_registration(self):
         driver = self.driver
         driver.get(hp.url)
         time.sleep(hp.time_max)

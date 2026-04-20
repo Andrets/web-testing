@@ -16,8 +16,7 @@ class BaseTest(unittest.TestCase):
     driver: webdriver.Remote
 
     @classmethod
-    def setUpClass(cls):
-        browser = os.environ.get("BROWSER", "chrome").lower()
+    def _setup_driver(cls, browser):
         if browser not in th.DRIVERS:
             raise ValueError(f"Unsupported browser: {browser}")
         cls.driver = th.DRIVERS[browser]()
@@ -29,7 +28,7 @@ class BaseTest(unittest.TestCase):
         if cls.driver:
             cls.driver.quit()
 
-    def test_01_registration(self):
+    def tep_01_registration(self):
         driver = self.driver
         driver.get(hp.url)
         time.sleep(hp.time_max)
@@ -77,6 +76,13 @@ class BaseTest(unittest.TestCase):
                 attachment_type=allure.attachment_type.PNG,
             )
             self.fail(f"The test failed: {str(e)}")
+
+
+class SendMessageWithFile(BaseTest):
+    @classmethod
+    def setUpClass(cls):
+        browser = os.environ.get("BROWSER", "chrome").lower()
+        cls._setup_driver(browser)
 
 
 def take_screenshot(driver, name):

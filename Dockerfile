@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-venv \
     wget \
     ca-certificates \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 #Setting up JAVA_HOME

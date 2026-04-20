@@ -21,7 +21,8 @@ def create_firefox():
     options.add_argument("--disable-dev-shm-usage")
     options.binary_location = "/usr/bin/firefox"
     os.environ["MOZ_HEADLESS"] = "1"
-    return webdriver.Firefox(options=options)
+    service = webdriver.FirefoxService(executable_path="/usr/local/bin/geckodriver")
+    return webdriver.Firefox(options=options, service=service)
 
 
 def create_edge():

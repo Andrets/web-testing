@@ -1,0 +1,10 @@
+first_name: David
+last_name: Miller
+birth_date: 1994-09-11
+city: Los Angeles
+state: CA
+street: 1808 Main St
+postal_code: 40705
+phone: 14836836805
+email: test_dx4y57wa@example.com
+password: 4$adDFn0x

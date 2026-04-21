@@ -1,0 +1,10 @@
+first_name: James
+last_name: Miller
+birth_date: 1990-08-21
+city: Los Angeles
+state: CA
+street: 5905 Cedar Ln
+postal_code: 60428
+phone: 14561857417
+email: test_9m2nv3ym@example.com
+password: 58Ub$toOx

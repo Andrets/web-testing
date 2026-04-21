@@ -1,0 +1,10 @@
+first_name: Robert
+last_name: Miller
+birth_date: 1990-03-28
+city: Philadelphia
+state: PA
+street: 1514 Maple Dr
+postal_code: 24245
+phone: 16138102538
+email: test_1dzz5wte@example.com
+password: eyOKh@9r7

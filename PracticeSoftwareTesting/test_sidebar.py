@@ -8,10 +8,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from web_config import WebAuthorization
 
 import helpers as hp
 import PracticeSoftwareTesting.helpers as th
+from PracticeSoftwareTesting.web_config import WebAuthorization
 
 
 class SidebarTest(unittest.TestCase):

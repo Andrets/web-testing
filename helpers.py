@@ -4,6 +4,9 @@ time_wait = 15
 time_mid = 2
 time_min = 1
 
+admin_email = "admin@practicesoftwaretesting.com"
+admin_password = "welcome01"
+
 """EXPECTED"""
 EXPECTED = {
     "nav-home": "Start",

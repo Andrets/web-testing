@@ -1,5 +1,7 @@
 import os
+import time
 
+import allure
 from selenium import webdriver
 
 
@@ -38,3 +40,20 @@ DRIVERS = {
     "firefox": create_firefox,
     "edge": create_edge,
 }
+
+
+def take_screenshot(driver: webdriver.Remote, name="screenshot"):
+    os.makedirs("screenshots", exist_ok=True)
+
+    timestamp = int(time.time())
+    filename = f"{name}_{timestamp}.png"
+    filepath = os.path.join("screenshots", filename)
+
+    # 1. Сохраняем файл (для artifact)
+    driver.save_screenshot(filepath)
+
+    # 2. Прикрепляем в Allure
+    with open(filepath, "rb") as f:
+        allure.attach(
+            f.read(), name=filename, attachment_type=allure.attachment_type.PNG
+        )

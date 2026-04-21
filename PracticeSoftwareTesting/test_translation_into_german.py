@@ -27,6 +27,7 @@ class TranslationIntoGermanTest(unittest.TestCase):
             raise ValueError(f"Unsupported browser: {browser}")
         cls.driver = th.DRIVERS[browser]()
         cls.driver.maximize_window()
+        allure.dynamic.parameter("browser", browser)
 
     @classmethod
     def tearDownClass(cls):

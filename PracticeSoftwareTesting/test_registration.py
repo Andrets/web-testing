@@ -4,23 +4,24 @@ import string
 import time
 import unittest
 
-import allure
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 import helpers as hp
-import tests.helpers as th
+import PracticeSoftwareTesting.helpers as th
 
 
-class TranslationIntoGermanTest(unittest.TestCase):
+class RegistrationTest(unittest.TestCase):
     driver: webdriver.Remote
+    browser_name: str
 
     @classmethod
     def setUpClass(cls):
         browser = os.environ.get("BROWSER", "chrome").lower()
+        cls.browser_name = browser
         if browser not in th.DRIVERS:
             raise ValueError(f"Unsupported browser: {browser}")
         cls.driver = th.DRIVERS[browser]()
@@ -28,8 +29,7 @@ class TranslationIntoGermanTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        if cls.driver:
-            cls.driver.quit()
+        cls.driver.quit()
 
     def test_01_registration(self):
         driver = self.driver
@@ -324,11 +324,7 @@ class TranslationIntoGermanTest(unittest.TestCase):
             print(f"Current data: {actual_text}")
 
         except Exception as e:
-            allure.attach(
-                driver.get_screenshot_as_png(),
-                name="error_screenshot",
-                attachment_type=allure.attachment_type.PNG,
-            )
+            th.take_screenshot(driver, name=f"registration_error_{self.browser_name}")
             self.fail(f"The test failed: {str(e)}")
 
 

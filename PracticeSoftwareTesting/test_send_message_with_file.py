@@ -9,15 +9,17 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 import helpers as hp
-import tests.helpers as th
+import PracticeSoftwareTesting.helpers as th
 
 
 class SendMessageWithTextTest(unittest.TestCase):
     driver: webdriver.Remote
+    browser_name: str
 
     @classmethod
     def setUpClass(cls):
         browser = os.environ.get("BROWSER", "chrome").lower()
+        cls.browser_name = browser
         if browser not in th.DRIVERS:
             raise ValueError(f"Unsupported browser: {browser}")
         cls.driver = th.DRIVERS[browser]()
@@ -36,11 +38,7 @@ class SendMessageWithTextTest(unittest.TestCase):
         actions = webdriver.ActionChains(driver)
         wait = WebDriverWait(driver, hp.time_wait)
 
-        allure.attach(
-            driver.get_screenshot_as_png(),
-            name="screenshot_homepage",
-            attachment_type=allure.attachment_type.PNG,
-        )
+        th.take_screenshot(driver, name=f"screenshot_{self.browser_name}")
 
         try:
             # Choose DE language
@@ -71,11 +69,7 @@ class SendMessageWithTextTest(unittest.TestCase):
                     )
 
         except Exception as e:
-            allure.attach(
-                driver.get_screenshot_as_png(),
-                name="error_screenshot",
-                attachment_type=allure.attachment_type.PNG,
-            )
+            th.take_screenshot(driver, name=f"screenshot_error_{self.browser_name}")
             self.fail(f"The test failed: {str(e)}")
 
 

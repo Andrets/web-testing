@@ -105,7 +105,7 @@ jobs:
           BROWSER: ${{ matrix.browser }}
           SELENIUM_HUB: http://selenium-hub:4444
         run: |
-          pytest tests/ -v --alluredir=allure-results-${{ matrix.browser }}
+          pytest PracticeSoftwareTesting/ -v --alluredir=allure-results-${{ matrix.browser }}
 
       - name: Upload results
         uses: actions/upload-artifact@v4
@@ -113,6 +113,13 @@ jobs:
         with:
           name: allure-results-${{ matrix.browser }}
           path: allure-results-${{ matrix.browser }}
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screenshots-${{ matrix.browser }}
+          path: screenshots/
 
   report:
     needs: test

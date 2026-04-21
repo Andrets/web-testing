@@ -1,0 +1,10 @@
+first_name: John
+last_name: Jones
+birth_date: 1996-10-08
+city: San Diego
+state: CA
+street: 7988 Oak Ave
+postal_code: 47989
+phone: 13167390747
+email: test_uvjd7qb3@example.com
+password: 32tFBy@be

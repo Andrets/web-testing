@@ -7,13 +7,13 @@
       "name" : "BuyProductToCardTest",
       "children" : [ {
         "name" : "test_01_authorization",
-        "uid" : "cf6a6fba56d31fc3",
+        "uid" : "433b8f2f53c293e5",
         "parentUid" : "d759db62632df9d6e20982d0408ee25d",
         "status" : "passed",
         "time" : {
-          "start" : 1776778124199,
-          "stop" : 1776778142052,
-          "duration" : 17853
+          "start" : 1776785349186,
+          "stop" : 1776785394957,
+          "duration" : 45771
         },
         "flaky" : false,
         "newFailed" : false,
@@ -21,16 +21,16 @@
         "newBroken" : false,
         "retriesCount" : 0,
         "retriesStatusChange" : false,
-        "parameters" : [ "'chrome'" ]
+        "parameters" : [ "'edge'" ]
       }, {
         "name" : "test_01_authorization",
-        "uid" : "da43297f6d2f8b76",
+        "uid" : "cffee0093a1d9a24",
         "parentUid" : "d759db62632df9d6e20982d0408ee25d",
         "status" : "passed",
         "time" : {
-          "start" : 1776778125763,
-          "stop" : 1776778145648,
-          "duration" : 19885
+          "start" : 1776785350225,
+          "stop" : 1776785399463,
+          "duration" : 49238
         },
         "flaky" : false,
         "newFailed" : false,
@@ -41,13 +41,13 @@
         "parameters" : [ "'firefox'" ]
       }, {
         "name" : "test_01_authorization",
-        "uid" : "ca5449534740e4fb",
+        "uid" : "12bb0cd287a8e479",
         "parentUid" : "d759db62632df9d6e20982d0408ee25d",
         "status" : "passed",
         "time" : {
-          "start" : 1776778150951,
-          "stop" : 1776778168224,
-          "duration" : 17273
+          "start" : 1776785351073,
+          "stop" : 1776785400309,
+          "duration" : 49236
         },
         "flaky" : false,
         "newFailed" : false,
@@ -55,23 +55,23 @@
         "newBroken" : false,
         "retriesCount" : 0,
         "retriesStatusChange" : false,
-        "parameters" : [ "'edge'" ]
+        "parameters" : [ "'chrome'" ]
       }, {
         "name" : "test_02_byu_product",
-        "uid" : "5f53ffeb9c85fe23",
+        "uid" : "2ee7a82aca94e405",
         "parentUid" : "d759db62632df9d6e20982d0408ee25d",
         "status" : "failed",
         "time" : {
-          "start" : 1776778168226,
-          "stop" : 1776778198749,
-          "duration" : 30523
+          "start" : 1776785400311,
+          "stop" : 1776785430423,
+          "duration" : 30112
         },
         "flaky" : false,
         "newFailed" : false,
         "newPassed" : false,
         "newBroken" : false,
         "retriesCount" : 2,
-        "retriesStatusChange" : false,
+        "retriesStatusChange" : true,
         "parameters" : [ ]
       } ],
       "uid" : "d759db62632df9d6e20982d0408ee25d"
@@ -83,13 +83,13 @@
       "name" : "RegistrationTest",
       "children" : [ {
         "name" : "test_01_registration",
-        "uid" : "89b504f4d2d81a10",
+        "uid" : "f22eafde76474ade",
         "parentUid" : "6d7ff40d09be16b8d0bc830cff4fbe2c",
         "status" : "failed",
         "time" : {
-          "start" : 1776778172759,
-          "stop" : 1776778209351,
-          "duration" : 36592
+          "start" : 1776785430953,
+          "stop" : 1776785468213,
+          "duration" : 37260
         },
         "flaky" : false,
         "newFailed" : false,
@@ -100,13 +100,13 @@
         "parameters" : [ "'chrome'" ]
       }, {
         "name" : "test_01_registration",
-        "uid" : "7cf2a1c174338f5f",
+        "uid" : "a7a2bdcff88e2f18",
         "parentUid" : "6d7ff40d09be16b8d0bc830cff4fbe2c",
         "status" : "failed",
         "time" : {
-          "start" : 1776778178577,
-          "stop" : 1776778214575,
-          "duration" : 35998
+          "start" : 1776785432439,
+          "stop" : 1776785473368,
+          "duration" : 40929
         },
         "flaky" : false,
         "newFailed" : false,
@@ -117,13 +117,13 @@
         "parameters" : [ "'firefox'" ]
       }, {
         "name" : "test_01_registration",
-        "uid" : "55e95c1421add39b",
+        "uid" : "ecfed5f8f758cdf4",
         "parentUid" : "6d7ff40d09be16b8d0bc830cff4fbe2c",
         "status" : "failed",
         "time" : {
-          "start" : 1776778199312,
-          "stop" : 1776778236320,
-          "duration" : 37008
+          "start" : 1776785610510,
+          "stop" : 1776785648168,
+          "duration" : 37658
         },
         "flaky" : false,
         "newFailed" : false,
@@ -142,13 +142,13 @@
       "name" : "SendMessageWithTextTest",
       "children" : [ {
         "name" : "test_01_registration",
-        "uid" : "598149e9848f980b",
+        "uid" : "c861626206638323",
         "parentUid" : "b2cb763906eea47af0500ccebc8ad40c",
         "status" : "failed",
         "time" : {
-          "start" : 1776778209910,
-          "stop" : 1776778232087,
-          "duration" : 22177
+          "start" : 1776785468732,
+          "stop" : 1776785487101,
+          "duration" : 18369
         },
         "flaky" : false,
         "newFailed" : false,
@@ -159,13 +159,13 @@
         "parameters" : [ "'chrome'" ]
       }, {
         "name" : "test_01_registration",
-        "uid" : "84ce3ab7e9d39a57",
+        "uid" : "c3150b9d9f34db83",
         "parentUid" : "b2cb763906eea47af0500ccebc8ad40c",
         "status" : "failed",
         "time" : {
-          "start" : 1776778217059,
-          "stop" : 1776778235174,
-          "duration" : 18115
+          "start" : 1776785475970,
+          "stop" : 1776785494189,
+          "duration" : 18219
         },
         "flaky" : false,
         "newFailed" : false,
@@ -176,13 +176,13 @@
         "parameters" : [ "'firefox'" ]
       }, {
         "name" : "test_01_registration",
-        "uid" : "136420ebf0583793",
+        "uid" : "ff971cbd6b8a2feb",
         "parentUid" : "b2cb763906eea47af0500ccebc8ad40c",
         "status" : "failed",
         "time" : {
-          "start" : 1776778236971,
-          "stop" : 1776778255196,
-          "duration" : 18225
+          "start" : 1776785648779,
+          "stop" : 1776785667097,
+          "duration" : 18318
         },
         "flaky" : false,
         "newFailed" : false,
@@ -201,13 +201,13 @@
       "name" : "SidebarTest",
       "children" : [ {
         "name" : "test_01_authorization",
-        "uid" : "f54decd779b2ed75",
+        "uid" : "a26667335bb3bd8",
         "parentUid" : "bd168d40e2c5497afadf02ef35f92d8f",
         "status" : "passed",
         "time" : {
-          "start" : 1776778232620,
-          "stop" : 1776778250890,
-          "duration" : 18270
+          "start" : 1776785487644,
+          "stop" : 1776785504323,
+          "duration" : 16679
         },
         "flaky" : false,
         "newFailed" : false,
@@ -218,13 +218,13 @@
         "parameters" : [ "'chrome'" ]
       }, {
         "name" : "test_01_authorization",
-        "uid" : "b1ec159b791debc7",
+        "uid" : "925aa32006aef3cc",
         "parentUid" : "bd168d40e2c5497afadf02ef35f92d8f",
         "status" : "passed",
         "time" : {
-          "start" : 1776778237733,
-          "stop" : 1776778255171,
-          "duration" : 17438
+          "start" : 1776785496918,
+          "stop" : 1776785513106,
+          "duration" : 16188
         },
         "flaky" : false,
         "newFailed" : false,
@@ -235,13 +235,13 @@
         "parameters" : [ "'firefox'" ]
       }, {
         "name" : "test_01_authorization",
-        "uid" : "aa2bfb0523a2bdc",
+        "uid" : "d8ef76ae2ad36186",
         "parentUid" : "bd168d40e2c5497afadf02ef35f92d8f",
         "status" : "passed",
         "time" : {
-          "start" : 1776778255950,
-          "stop" : 1776778272771,
-          "duration" : 16821
+          "start" : 1776785667715,
+          "stop" : 1776785684737,
+          "duration" : 17022
         },
         "flaky" : false,
         "newFailed" : false,
@@ -252,20 +252,20 @@
         "parameters" : [ "'edge'" ]
       }, {
         "name" : "test_02_sidebar_test",
-        "uid" : "86b5399c65913264",
+        "uid" : "d13a5d468da4194d",
         "parentUid" : "bd168d40e2c5497afadf02ef35f92d8f",
-        "status" : "failed",
+        "status" : "broken",
         "time" : {
-          "start" : 1776778272773,
-          "stop" : 1776778287870,
-          "duration" : 15097
+          "start" : 1776785684739,
+          "stop" : 1776785902056,
+          "duration" : 217317
         },
         "flaky" : false,
         "newFailed" : false,
         "newPassed" : false,
         "newBroken" : false,
         "retriesCount" : 2,
-        "retriesStatusChange" : false,
+        "retriesStatusChange" : true,
         "parameters" : [ ]
       } ],
       "uid" : "bd168d40e2c5497afadf02ef35f92d8f"
@@ -277,21 +277,55 @@
       "name" : "TranslationIntoGermanTest",
       "children" : [ {
         "name" : "test_01_registration",
-        "uid" : "1d09c303df54a042",
+        "uid" : "6115f6817277cf2",
         "parentUid" : "1e6ba50fcb86fbbea00b30d1b612c3af",
         "status" : "failed",
         "time" : {
-          "start" : 1776778288557,
-          "stop" : 1776778325587,
-          "duration" : 37030
+          "start" : 1776785519970,
+          "stop" : 1776785557088,
+          "duration" : 37118
         },
         "flaky" : false,
         "newFailed" : false,
         "newPassed" : false,
         "newBroken" : false,
-        "retriesCount" : 2,
+        "retriesCount" : 0,
         "retriesStatusChange" : false,
-        "parameters" : [ ]
+        "parameters" : [ "'chrome'" ]
+      }, {
+        "name" : "test_01_registration",
+        "uid" : "4d3bb9603e80ff37",
+        "parentUid" : "1e6ba50fcb86fbbea00b30d1b612c3af",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776785530803,
+          "stop" : 1776785566788,
+          "duration" : 35985
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'firefox'" ]
+      }, {
+        "name" : "test_01_registration",
+        "uid" : "de74cd382fdda731",
+        "parentUid" : "1e6ba50fcb86fbbea00b30d1b612c3af",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776785902742,
+          "stop" : 1776785940040,
+          "duration" : 37298
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'edge'" ]
       } ],
       "uid" : "1e6ba50fcb86fbbea00b30d1b612c3af"
     } ],

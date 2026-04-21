@@ -1,0 +1,10 @@
+first_name: William
+last_name: Johnson
+birth_date: 1973-11-17
+city: Phoenix
+state: AZ
+street: 7147 Main St
+postal_code: 83191
+phone: 18646693609
+email: test_pmfwf8uq@example.com
+password: p%o60OerZ

@@ -1,0 +1,10 @@
+first_name: Robert
+last_name: Davis
+birth_date: 1977-10-22
+city: Chicago
+state: IL
+street: 2252 Cedar Ln
+postal_code: 95593
+phone: 14805477593
+email: test_ewmdufa8@example.com
+password: K#hcet76C

@@ -4,58 +4,16 @@
   "children" : [ {
     "name" : "Product defects",
     "children" : [ {
-      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x562533b39b6a <unknown>\n#1 0x56253353b265 <unknown>\n#2 0x56253358df76 <unknown>\n#3 0x56253358e1b1 <unknown>\n#4 0x5625335d97d4 <unknown>\n#5 0x5625335d6969 <unknown>\n#6 0x5625335815cf <unknown>\n#7 0x562533582391 <unknown>\n#8 0x562533aff04b <unknown>\n#9 0x562533b0200d <unknown>\n#10 0x562533aeb808 <unknown>\n#11 0x562533b02ba0 <unknown>\n#12 0x562533ad2280 <unknown>\n#13 0x562533b26db8 <unknown>\n#14 0x562533b26f88 <unknown>\n#15 0x562533b385de <unknown>\n#16 0x7f0cc07c3aa4 <unknown>\n#17 0x7f0cc0850a64 __clone",
-      "children" : [ {
-        "name" : "test_02_byu_product",
-        "uid" : "2ee7a82aca94e405",
-        "parentUid" : "8bfb492e49e9017504ca1066dacec8bf",
-        "status" : "failed",
-        "time" : {
-          "start" : 1776785400311,
-          "stop" : 1776785430423,
-          "duration" : 30112
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "newPassed" : false,
-        "newBroken" : false,
-        "retriesCount" : 2,
-        "retriesStatusChange" : true,
-        "parameters" : [ ]
-      } ],
-      "uid" : "8bfb492e49e9017504ca1066dacec8bf"
-    }, {
-      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x5642420adb6a <unknown>\n#1 0x564241aaf265 <unknown>\n#2 0x564241b01f76 <unknown>\n#3 0x564241b021b1 <unknown>\n#4 0x564241b4d7d4 <unknown>\n#5 0x564241b4a969 <unknown>\n#6 0x564241af55cf <unknown>\n#7 0x564241af6391 <unknown>\n#8 0x56424207304b <unknown>\n#9 0x56424207600d <unknown>\n#10 0x56424205f808 <unknown>\n#11 0x564242076ba0 <unknown>\n#12 0x564242046280 <unknown>\n#13 0x56424209adb8 <unknown>\n#14 0x56424209af88 <unknown>\n#15 0x5642420ac5de <unknown>\n#16 0x7fd2d19d3aa4 <unknown>\n#17 0x7fd2d1a60a64 __clone",
-      "children" : [ {
-        "name" : "test_01_registration",
-        "uid" : "f22eafde76474ade",
-        "parentUid" : "21967c2279332f0522a5cbc3ee409427",
-        "status" : "failed",
-        "time" : {
-          "start" : 1776785430953,
-          "stop" : 1776785468213,
-          "duration" : 37260
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "newPassed" : false,
-        "newBroken" : false,
-        "retriesCount" : 0,
-        "retriesStatusChange" : false,
-        "parameters" : [ "'chrome'" ]
-      } ],
-      "uid" : "21967c2279332f0522a5cbc3ee409427"
-    }, {
       "name" : "AssertionError: The test failed: Message: \nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5\nNoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5\ndom.find/</<@chrome://remote/content/shared/DOM.sys.mjs:136:16",
       "children" : [ {
-        "name" : "test_01_registration",
-        "uid" : "a7a2bdcff88e2f18",
+        "name" : "test_02_byu_product",
+        "uid" : "104121103e62c141",
         "parentUid" : "6eca139f1c0336db87dc56e89b9a749d",
         "status" : "failed",
         "time" : {
-          "start" : 1776785432439,
-          "stop" : 1776785473368,
-          "duration" : 40929
+          "start" : 1776809145000,
+          "stop" : 1776809175289,
+          "duration" : 30289
         },
         "flaky" : false,
         "newFailed" : false,
@@ -66,13 +24,30 @@
         "parameters" : [ "'firefox'" ]
       }, {
         "name" : "test_01_registration",
-        "uid" : "4d3bb9603e80ff37",
+        "uid" : "d5c5a5095d546edb",
         "parentUid" : "6eca139f1c0336db87dc56e89b9a749d",
         "status" : "failed",
         "time" : {
-          "start" : 1776785530803,
-          "stop" : 1776785566788,
-          "duration" : 35985
+          "start" : 1776809177735,
+          "stop" : 1776809213639,
+          "duration" : 35904
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'firefox'" ]
+      }, {
+        "name" : "test_01_registration",
+        "uid" : "7b8fdab9c3098023",
+        "parentUid" : "6eca139f1c0336db87dc56e89b9a749d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776809270342,
+          "stop" : 1776809306126,
+          "duration" : 35784
         },
         "flaky" : false,
         "newFailed" : false,
@@ -84,16 +59,37 @@
       } ],
       "uid" : "6eca139f1c0336db87dc56e89b9a749d"
     }, {
-      "name" : "AssertionError: The test failed: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[normalize-space()='Kategorien']\"}\n  (Session info: chrome=147.0.7727.55); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\n#0 0x56173cab3b6a <unknown>\n#1 0x56173c4b5265 <unknown>\n#2 0x56173c507f76 <unknown>\n#3 0x56173c5081b1 <unknown>\n#4 0x56173c5537d4 <unknown>\n#5 0x56173c550969 <unknown>\n#6 0x56173c4fb5cf <unknown>\n#7 0x56173c4fc391 <unknown>\n#8 0x56173ca7904b <unknown>\n#9 0x56173ca7c00d <unknown>\n#10 0x56173ca65808 <unknown>\n#11 0x56173ca7cba0 <unknown>\n#12 0x56173ca4c280 <unknown>\n#13 0x56173caa0db8 <unknown>\n#14 0x56173caa0f88 <unknown>\n#15 0x56173cab25de <unknown>\n#16 0x7f5426539aa4 <unknown>\n#17 0x7f54265c6a64 __clone",
+      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x5555859a053e <unknown>\n#1 0x555585360984 <unknown>\n#2 0x5555853b2276 <unknown>\n#3 0x5555853b2671 <unknown>\n#4 0x5555853fca54 <unknown>\n#5 0x5555853fa650 <unknown>\n#6 0x5555853a6997 <unknown>\n#7 0x5555853a75c1 <unknown>\n#8 0x55558596a58f <unknown>\n#9 0x55558596d6da <unknown>\n#10 0x55558596d16d <unknown>\n#11 0x55558595ad18 <unknown>\n#12 0x55558596df34 <unknown>\n#13 0x5555859441ce <unknown>\n#14 0x55558598dc18 <unknown>\n#15 0x55558598de56 <unknown>\n#16 0x55558599f1be <unknown>\n#17 0x7f427b426aa4 <unknown>\n#18 0x7f427b4b3a64 __clone",
       "children" : [ {
-        "name" : "test_01_registration",
-        "uid" : "c861626206638323",
-        "parentUid" : "8bf53706cc34595e48c0aa56eaa794dd",
+        "name" : "test_02_byu_product",
+        "uid" : "6c18dce84292e7ef",
+        "parentUid" : "97e738dcf0a8e9915c990b21286f419f",
         "status" : "failed",
         "time" : {
-          "start" : 1776785468732,
-          "stop" : 1776785487101,
-          "duration" : 18369
+          "start" : 1776809149977,
+          "stop" : 1776809180100,
+          "duration" : 30123
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'edge'" ]
+      } ],
+      "uid" : "97e738dcf0a8e9915c990b21286f419f"
+    }, {
+      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x55bd8ae0fb6a <unknown>\n#1 0x55bd8a811265 <unknown>\n#2 0x55bd8a863f76 <unknown>\n#3 0x55bd8a8641b1 <unknown>\n#4 0x55bd8a8af7d4 <unknown>\n#5 0x55bd8a8ac969 <unknown>\n#6 0x55bd8a8575cf <unknown>\n#7 0x55bd8a858391 <unknown>\n#8 0x55bd8add504b <unknown>\n#9 0x55bd8add800d <unknown>\n#10 0x55bd8adc1808 <unknown>\n#11 0x55bd8add8ba0 <unknown>\n#12 0x55bd8ada8280 <unknown>\n#13 0x55bd8adfcdb8 <unknown>\n#14 0x55bd8adfcf88 <unknown>\n#15 0x55bd8ae0e5de <unknown>\n#16 0x7f70654ceaa4 <unknown>\n#17 0x7f706555ba64 __clone",
+      "children" : [ {
+        "name" : "test_02_byu_product",
+        "uid" : "5835082ab0b11349",
+        "parentUid" : "235c33a27737018529e2a6628530e37c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776809170953,
+          "stop" : 1776809201463,
+          "duration" : 30510
         },
         "flaky" : false,
         "newFailed" : false,
@@ -103,18 +99,60 @@
         "retriesStatusChange" : false,
         "parameters" : [ "'chrome'" ]
       } ],
-      "uid" : "8bf53706cc34595e48c0aa56eaa794dd"
+      "uid" : "235c33a27737018529e2a6628530e37c"
+    }, {
+      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x5592e875f53e <unknown>\n#1 0x5592e811f984 <unknown>\n#2 0x5592e8171276 <unknown>\n#3 0x5592e8171671 <unknown>\n#4 0x5592e81bba54 <unknown>\n#5 0x5592e81b9650 <unknown>\n#6 0x5592e8165997 <unknown>\n#7 0x5592e81665c1 <unknown>\n#8 0x5592e872958f <unknown>\n#9 0x5592e872c6da <unknown>\n#10 0x5592e872c16d <unknown>\n#11 0x5592e8719d18 <unknown>\n#12 0x5592e872cf34 <unknown>\n#13 0x5592e87031ce <unknown>\n#14 0x5592e874cc18 <unknown>\n#15 0x5592e874ce56 <unknown>\n#16 0x5592e875e1be <unknown>\n#17 0x7f05fa410aa4 <unknown>\n#18 0x7f05fa49da64 __clone",
+      "children" : [ {
+        "name" : "test_01_registration",
+        "uid" : "7aa300c11478abc2",
+        "parentUid" : "9e569e4192c316b03263dad6f9d0d7eb",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776809180755,
+          "stop" : 1776809217574,
+          "duration" : 36819
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'edge'" ]
+      } ],
+      "uid" : "9e569e4192c316b03263dad6f9d0d7eb"
+    }, {
+      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x564ff62eeb6a <unknown>\n#1 0x564ff5cf0265 <unknown>\n#2 0x564ff5d42f76 <unknown>\n#3 0x564ff5d431b1 <unknown>\n#4 0x564ff5d8e7d4 <unknown>\n#5 0x564ff5d8b969 <unknown>\n#6 0x564ff5d365cf <unknown>\n#7 0x564ff5d37391 <unknown>\n#8 0x564ff62b404b <unknown>\n#9 0x564ff62b700d <unknown>\n#10 0x564ff62a0808 <unknown>\n#11 0x564ff62b7ba0 <unknown>\n#12 0x564ff6287280 <unknown>\n#13 0x564ff62dbdb8 <unknown>\n#14 0x564ff62dbf88 <unknown>\n#15 0x564ff62ed5de <unknown>\n#16 0x7f05d4bc3aa4 <unknown>\n#17 0x7f05d4c50a64 __clone",
+      "children" : [ {
+        "name" : "test_01_registration",
+        "uid" : "9257ab6ec0f34c7b",
+        "parentUid" : "0e72077b28f69cdd1a3bbfbe3b1cfe02",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776809201950,
+          "stop" : 1776809238638,
+          "duration" : 36688
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'chrome'" ]
+      } ],
+      "uid" : "0e72077b28f69cdd1a3bbfbe3b1cfe02"
     }, {
       "name" : "AssertionError: The test failed: Message: Unable to locate element: //a[normalize-space()='Kategorien']; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5\nNoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5\ndom.find/</<@chrome://remote/content/shared/DOM.sys.mjs:136:16",
       "children" : [ {
         "name" : "test_01_registration",
-        "uid" : "c3150b9d9f34db83",
+        "uid" : "f10e9847cfaff8f2",
         "parentUid" : "b47079c9398fb0630c72fd393592e0a0",
         "status" : "failed",
         "time" : {
-          "start" : 1776785475970,
-          "stop" : 1776785494189,
-          "duration" : 18219
+          "start" : 1776809216136,
+          "stop" : 1776809234254,
+          "duration" : 18118
         },
         "flaky" : false,
         "newFailed" : false,
@@ -126,16 +164,37 @@
       } ],
       "uid" : "b47079c9398fb0630c72fd393592e0a0"
     }, {
-      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x5584e67a1b6a <unknown>\n#1 0x5584e61a3265 <unknown>\n#2 0x5584e61f5f76 <unknown>\n#3 0x5584e61f61b1 <unknown>\n#4 0x5584e62417d4 <unknown>\n#5 0x5584e623e969 <unknown>\n#6 0x5584e61e95cf <unknown>\n#7 0x5584e61ea391 <unknown>\n#8 0x5584e676704b <unknown>\n#9 0x5584e676a00d <unknown>\n#10 0x5584e6753808 <unknown>\n#11 0x5584e676aba0 <unknown>\n#12 0x5584e673a280 <unknown>\n#13 0x5584e678edb8 <unknown>\n#14 0x5584e678ef88 <unknown>\n#15 0x5584e67a05de <unknown>\n#16 0x7fb307f5eaa4 <unknown>\n#17 0x7fb307feba64 __clone",
+      "name" : "AssertionError: The test failed: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[normalize-space()='Kategorien']\"}\n  (Session info: MicrosoftEdge=147.0.3912.60); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\n#0 0x557a15f2753e <unknown>\n#1 0x557a158e7984 <unknown>\n#2 0x557a15939276 <unknown>\n#3 0x557a15939671 <unknown>\n#4 0x557a15983a54 <unknown>\n#5 0x557a15981650 <unknown>\n#6 0x557a1592d997 <unknown>\n#7 0x557a1592e5c1 <unknown>\n#8 0x557a15ef158f <unknown>\n#9 0x557a15ef46da <unknown>\n#10 0x557a15ef416d <unknown>\n#11 0x557a15ee1d18 <unknown>\n#12 0x557a15ef4f34 <unknown>\n#13 0x557a15ecb1ce <unknown>\n#14 0x557a15f14c18 <unknown>\n#15 0x557a15f14e56 <unknown>\n#16 0x557a15f261be <unknown>\n#17 0x7fb3757a2aa4 <unknown>\n#18 0x7fb37582fa64 __clone",
       "children" : [ {
         "name" : "test_01_registration",
-        "uid" : "6115f6817277cf2",
-        "parentUid" : "bebc9a7e2b396a231762c92d68718fdb",
+        "uid" : "738840f9e673d50a",
+        "parentUid" : "084a4c4408fab14aad9579b404c63714",
         "status" : "failed",
         "time" : {
-          "start" : 1776785519970,
-          "stop" : 1776785557088,
-          "duration" : 37118
+          "start" : 1776809218211,
+          "stop" : 1776809240109,
+          "duration" : 21898
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'edge'" ]
+      } ],
+      "uid" : "084a4c4408fab14aad9579b404c63714"
+    }, {
+      "name" : "AssertionError: The test failed: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[normalize-space()='Kategorien']\"}\n  (Session info: chrome=147.0.7727.55); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\n#0 0x561c29245b6a <unknown>\n#1 0x561c28c47265 <unknown>\n#2 0x561c28c99f76 <unknown>\n#3 0x561c28c9a1b1 <unknown>\n#4 0x561c28ce57d4 <unknown>\n#5 0x561c28ce2969 <unknown>\n#6 0x561c28c8d5cf <unknown>\n#7 0x561c28c8e391 <unknown>\n#8 0x561c2920b04b <unknown>\n#9 0x561c2920e00d <unknown>\n#10 0x561c291f7808 <unknown>\n#11 0x561c2920eba0 <unknown>\n#12 0x561c291de280 <unknown>\n#13 0x561c29232db8 <unknown>\n#14 0x561c29232f88 <unknown>\n#15 0x561c292445de <unknown>\n#16 0x7f5003a2caa4 <unknown>\n#17 0x7f5003ab9a64 __clone",
+      "children" : [ {
+        "name" : "test_01_registration",
+        "uid" : "a9714459fd6777e7",
+        "parentUid" : "c253dd6bb76c174059602b73e7d8774c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776809239075,
+          "stop" : 1776809257121,
+          "duration" : 18046
         },
         "flaky" : false,
         "newFailed" : false,
@@ -145,18 +204,81 @@
         "retriesStatusChange" : false,
         "parameters" : [ "'chrome'" ]
       } ],
-      "uid" : "bebc9a7e2b396a231762c92d68718fdb"
+      "uid" : "c253dd6bb76c174059602b73e7d8774c"
     }, {
-      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x5624533a853e <unknown>\n#1 0x562452d68984 <unknown>\n#2 0x562452dba276 <unknown>\n#3 0x562452dba671 <unknown>\n#4 0x562452e04a54 <unknown>\n#5 0x562452e02650 <unknown>\n#6 0x562452dae997 <unknown>\n#7 0x562452daf5c1 <unknown>\n#8 0x56245337258f <unknown>\n#9 0x5624533756da <unknown>\n#10 0x56245337516d <unknown>\n#11 0x562453362d18 <unknown>\n#12 0x562453375f34 <unknown>\n#13 0x56245334c1ce <unknown>\n#14 0x562453395c18 <unknown>\n#15 0x562453395e56 <unknown>\n#16 0x5624533a71be <unknown>\n#17 0x7f80a453caa4 <unknown>\n#18 0x7f80a45c9a64 __clone",
+      "name" : "AssertionError: The test failed: Message: Unable to locate element: //a[text()='Home']; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5\nNoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5\ndom.find/</<@chrome://remote/content/shared/DOM.sys.mjs:136:16",
       "children" : [ {
-        "name" : "test_01_registration",
-        "uid" : "ecfed5f8f758cdf4",
-        "parentUid" : "de0583a80867824afabb818e01544170",
+        "name" : "test_02_sidebar_test",
+        "uid" : "1817f0b901fb53da",
+        "parentUid" : "3e21da4501ccf2b895d11bdae424d07c",
         "status" : "failed",
         "time" : {
-          "start" : 1776785610510,
-          "stop" : 1776785648168,
-          "duration" : 37658
+          "start" : 1776809252755,
+          "stop" : 1776809267811,
+          "duration" : 15056
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'firefox'" ]
+      } ],
+      "uid" : "3e21da4501ccf2b895d11bdae424d07c"
+    }, {
+      "name" : "AssertionError: The test failed: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[text()='Home']\"}\n  (Session info: chrome=147.0.7727.55); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\n#0 0x560d37cafb6a <unknown>\n#1 0x560d376b1265 <unknown>\n#2 0x560d37703f76 <unknown>\n#3 0x560d377041b1 <unknown>\n#4 0x560d3774f7d4 <unknown>\n#5 0x560d3774c969 <unknown>\n#6 0x560d376f75cf <unknown>\n#7 0x560d376f8391 <unknown>\n#8 0x560d37c7504b <unknown>\n#9 0x560d37c7800d <unknown>\n#10 0x560d37c61808 <unknown>\n#11 0x560d37c78ba0 <unknown>\n#12 0x560d37c48280 <unknown>\n#13 0x560d37c9cdb8 <unknown>\n#14 0x560d37c9cf88 <unknown>\n#15 0x560d37cae5de <unknown>\n#16 0x7f0f5eb5aaa4 <unknown>\n#17 0x7f0f5ebe7a64 __clone",
+      "children" : [ {
+        "name" : "test_02_sidebar_test",
+        "uid" : "4041e724536e7c26",
+        "parentUid" : "a51495d540a6e514719a9cbb5b37602f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776809273931,
+          "stop" : 1776809288992,
+          "duration" : 15061
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'chrome'" ]
+      } ],
+      "uid" : "a51495d540a6e514719a9cbb5b37602f"
+    }, {
+      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x55b2161f8b6a <unknown>\n#1 0x55b215bfa265 <unknown>\n#2 0x55b215c4cf76 <unknown>\n#3 0x55b215c4d1b1 <unknown>\n#4 0x55b215c987d4 <unknown>\n#5 0x55b215c95969 <unknown>\n#6 0x55b215c405cf <unknown>\n#7 0x55b215c41391 <unknown>\n#8 0x55b2161be04b <unknown>\n#9 0x55b2161c100d <unknown>\n#10 0x55b2161aa808 <unknown>\n#11 0x55b2161c1ba0 <unknown>\n#12 0x55b216191280 <unknown>\n#13 0x55b2161e5db8 <unknown>\n#14 0x55b2161e5f88 <unknown>\n#15 0x55b2161f75de <unknown>\n#16 0x7fc58cf83aa4 <unknown>\n#17 0x7fc58d010a64 __clone",
+      "children" : [ {
+        "name" : "test_01_registration",
+        "uid" : "132c12e0a2baea90",
+        "parentUid" : "9db48e07248a687dff0ea4ac04163d68",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776809289429,
+          "stop" : 1776809325897,
+          "duration" : 36468
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'chrome'" ]
+      } ],
+      "uid" : "9db48e07248a687dff0ea4ac04163d68"
+    }, {
+      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x55a41604053e <unknown>\n#1 0x55a415a00984 <unknown>\n#2 0x55a415a52276 <unknown>\n#3 0x55a415a52671 <unknown>\n#4 0x55a415a9ca54 <unknown>\n#5 0x55a415a9a650 <unknown>\n#6 0x55a415a46997 <unknown>\n#7 0x55a415a475c1 <unknown>\n#8 0x55a41600a58f <unknown>\n#9 0x55a41600d6da <unknown>\n#10 0x55a41600d16d <unknown>\n#11 0x55a415ffad18 <unknown>\n#12 0x55a41600df34 <unknown>\n#13 0x55a415fe41ce <unknown>\n#14 0x55a41602dc18 <unknown>\n#15 0x55a41602de56 <unknown>\n#16 0x55a41603f1be <unknown>\n#17 0x7f6f2af98aa4 <unknown>\n#18 0x7f6f2b025a64 __clone",
+      "children" : [ {
+        "name" : "test_01_registration",
+        "uid" : "555e53b8eb2fbb59",
+        "parentUid" : "114b72779aa24a479975de45a981f0c7",
+        "status" : "failed",
+        "time" : {
+          "start" : 1776809477948,
+          "stop" : 1776809517894,
+          "duration" : 39946
         },
         "flaky" : false,
         "newFailed" : false,
@@ -166,49 +288,7 @@
         "retriesStatusChange" : false,
         "parameters" : [ "'edge'" ]
       } ],
-      "uid" : "de0583a80867824afabb818e01544170"
-    }, {
-      "name" : "AssertionError: The test failed: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[normalize-space()='Kategorien']\"}\n  (Session info: MicrosoftEdge=147.0.3912.60); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\n#0 0x5607a8abb53e <unknown>\n#1 0x5607a847b984 <unknown>\n#2 0x5607a84cd276 <unknown>\n#3 0x5607a84cd671 <unknown>\n#4 0x5607a8517a54 <unknown>\n#5 0x5607a8515650 <unknown>\n#6 0x5607a84c1997 <unknown>\n#7 0x5607a84c25c1 <unknown>\n#8 0x5607a8a8558f <unknown>\n#9 0x5607a8a886da <unknown>\n#10 0x5607a8a8816d <unknown>\n#11 0x5607a8a75d18 <unknown>\n#12 0x5607a8a88f34 <unknown>\n#13 0x5607a8a5f1ce <unknown>\n#14 0x5607a8aa8c18 <unknown>\n#15 0x5607a8aa8e56 <unknown>\n#16 0x5607a8aba1be <unknown>\n#17 0x7fdd05174aa4 <unknown>\n#18 0x7fdd05201a64 __clone",
-      "children" : [ {
-        "name" : "test_01_registration",
-        "uid" : "ff971cbd6b8a2feb",
-        "parentUid" : "a69a350d849994b9c6b7d3c6c1ae48cf",
-        "status" : "failed",
-        "time" : {
-          "start" : 1776785648779,
-          "stop" : 1776785667097,
-          "duration" : 18318
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "newPassed" : false,
-        "newBroken" : false,
-        "retriesCount" : 0,
-        "retriesStatusChange" : false,
-        "parameters" : [ "'edge'" ]
-      } ],
-      "uid" : "a69a350d849994b9c6b7d3c6c1ae48cf"
-    }, {
-      "name" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x559c51ae753e <unknown>\n#1 0x559c514a7984 <unknown>\n#2 0x559c514f9276 <unknown>\n#3 0x559c514f9671 <unknown>\n#4 0x559c51543a54 <unknown>\n#5 0x559c51541650 <unknown>\n#6 0x559c514ed997 <unknown>\n#7 0x559c514ee5c1 <unknown>\n#8 0x559c51ab158f <unknown>\n#9 0x559c51ab46da <unknown>\n#10 0x559c51ab416d <unknown>\n#11 0x559c51aa1d18 <unknown>\n#12 0x559c51ab4f34 <unknown>\n#13 0x559c51a8b1ce <unknown>\n#14 0x559c51ad4c18 <unknown>\n#15 0x559c51ad4e56 <unknown>\n#16 0x559c51ae61be <unknown>\n#17 0x7f3df1247aa4 <unknown>\n#18 0x7f3df12d4a64 __clone",
-      "children" : [ {
-        "name" : "test_01_registration",
-        "uid" : "de74cd382fdda731",
-        "parentUid" : "629a3ff2556a2d534fbcd8f54e0125b1",
-        "status" : "failed",
-        "time" : {
-          "start" : 1776785902742,
-          "stop" : 1776785940040,
-          "duration" : 37298
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "newPassed" : false,
-        "newBroken" : false,
-        "retriesCount" : 0,
-        "retriesStatusChange" : false,
-        "parameters" : [ "'edge'" ]
-      } ],
-      "uid" : "629a3ff2556a2d534fbcd8f54e0125b1"
+      "uid" : "114b72779aa24a479975de45a981f0c7"
     } ],
     "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
   }, {
@@ -217,21 +297,21 @@
       "name" : "selenium.common.exceptions.WebDriverException: Message: tab crashed\n  (Session info: MicrosoftEdge=147.0.3912.60)",
       "children" : [ {
         "name" : "test_02_sidebar_test",
-        "uid" : "d13a5d468da4194d",
+        "uid" : "db27acbf7d9b4975",
         "parentUid" : "7a6be8ab0e323bfe24b3fb1686f273bb",
         "status" : "broken",
         "time" : {
-          "start" : 1776785684739,
-          "stop" : 1776785902056,
-          "duration" : 217317
+          "start" : 1776809257630,
+          "stop" : 1776809477191,
+          "duration" : 219561
         },
         "flaky" : false,
         "newFailed" : false,
         "newPassed" : false,
         "newBroken" : false,
-        "retriesCount" : 2,
-        "retriesStatusChange" : true,
-        "parameters" : [ ]
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'edge'" ]
       } ],
       "uid" : "7a6be8ab0e323bfe24b3fb1686f273bb"
     } ],

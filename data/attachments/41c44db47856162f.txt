@@ -1,0 +1,10 @@
+first_name: Joseph
+last_name: Johnson
+birth_date: 1987-09-07
+city: Dallas
+state: TX
+street: 4924 Elm St
+postal_code: 60389
+phone: 13679188928
+email: test_zqy41fdy@example.com
+password: V$q0Vx8wf

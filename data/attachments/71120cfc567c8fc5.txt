@@ -1,0 +1,10 @@
+first_name: James
+last_name: Jones
+birth_date: 1997-08-25
+city: New York
+state: NY
+street: 5794 Maple Dr
+postal_code: 61495
+phone: 12384493788
+email: test_jk9b3182@example.com
+password: 1csw2Wc$P

@@ -1,4 +1,59 @@
 {
-  "total" : 0,
-  "items" : [ ]
+  "total" : 5,
+  "items" : [ {
+    "uid" : "407ca2cce9f0c80e52a5d9d676900a93",
+    "name" : "test_send_message_with_file",
+    "statistic" : {
+      "failed" : 3,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 3
+    }
+  }, {
+    "uid" : "1bf10984a08952a9f23d6156d41c5ad9",
+    "name" : "test_buy_product_to_card",
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 2
+    }
+  }, {
+    "uid" : "aefe3777989fbf145b592f2a0d427750",
+    "name" : "test_sidebar",
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 2
+    }
+  }, {
+    "uid" : "bae059ceaafcbe9e8d1154b437df4afd",
+    "name" : "test_registration",
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    }
+  }, {
+    "uid" : "663b4f7f7bbf5630e6df05d5e628a7ac",
+    "name" : "test_translation_into_german",
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    }
+  } ]
 }

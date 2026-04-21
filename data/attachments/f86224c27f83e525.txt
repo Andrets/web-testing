@@ -1,0 +1,10 @@
+first_name: Michael
+last_name: Smith
+birth_date: 1972-01-19
+city: San Antonio
+state: TX
+street: 5719 Pine Rd
+postal_code: 28083
+phone: 13470655093
+email: test_dzp6ltnf@example.com
+password: vq%e7yP8Z

@@ -1,0 +1,10 @@
+first_name: Michael
+last_name: Smith
+birth_date: 1979-08-10
+city: Chicago
+state: IL
+street: 3105 Oak Ave
+postal_code: 43365
+phone: 15536840678
+email: test_93q6cpg8@example.com
+password: Jef%xc45E

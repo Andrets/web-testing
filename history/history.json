@@ -1,1 +1,180 @@
-{ }
+{
+  "b468c8431afbc92803b3b78818053478" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "19f0bb40eed7ff8f",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x55861783453e <unknown>\n#1 0x5586171f4984 <unknown>\n#2 0x558617246276 <unknown>\n#3 0x558617246671 <unknown>\n#4 0x558617290a54 <unknown>\n#5 0x55861728e650 <unknown>\n#6 0x55861723a997 <unknown>\n#7 0x55861723b5c1 <unknown>\n#8 0x5586177fe58f <unknown>\n#9 0x5586178016da <unknown>\n#10 0x55861780116d <unknown>\n#11 0x5586177eed18 <unknown>\n#12 0x558617801f34 <unknown>\n#13 0x5586177d81ce <unknown>\n#14 0x558617821c18 <unknown>\n#15 0x558617821e56 <unknown>\n#16 0x5586178331be <unknown>\n#17 0x7fc4b7bf8aa4 <unknown>\n#18 0x7fc4b7c85a64 __clone",
+      "time" : {
+        "start" : 1776777070122,
+        "stop" : 1776777100264,
+        "duration" : 30142
+      }
+    } ]
+  },
+  "d9f3d5cc96d73bb706f900b4ee78d022" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a02f886e6af1011b",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: The test failed: Message: Unable to locate element: //a[text()='Home']; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5\nNoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5\ndom.find/</<@chrome://remote/content/shared/DOM.sys.mjs:136:16",
+      "time" : {
+        "start" : 1776777175519,
+        "stop" : 1776777190582,
+        "duration" : 15063
+      }
+    } ]
+  },
+  "9a46f57c954629c8209d2b7e38c892df" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "36e39ee42ff69c65",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: The test failed: Message: Unable to locate element: //a[normalize-space()='Kategorien']; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5\nNoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5\ndom.find/</<@chrome://remote/content/shared/DOM.sys.mjs:136:16",
+      "time" : {
+        "start" : 1776777138748,
+        "stop" : 1776777156878,
+        "duration" : 18130
+      }
+    } ]
+  },
+  "e79a7ce938854c38b6f641294d4858a1" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ce622a054233d09",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: The test failed: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[normalize-space()='Kategorien']\"}\n  (Session info: MicrosoftEdge=147.0.3912.60); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\n#0 0x5614b607953e <unknown>\n#1 0x5614b5a39984 <unknown>\n#2 0x5614b5a8b276 <unknown>\n#3 0x5614b5a8b671 <unknown>\n#4 0x5614b5ad5a54 <unknown>\n#5 0x5614b5ad3650 <unknown>\n#6 0x5614b5a7f997 <unknown>\n#7 0x5614b5a805c1 <unknown>\n#8 0x5614b604358f <unknown>\n#9 0x5614b60466da <unknown>\n#10 0x5614b604616d <unknown>\n#11 0x5614b6033d18 <unknown>\n#12 0x5614b6046f34 <unknown>\n#13 0x5614b601d1ce <unknown>\n#14 0x5614b6066c18 <unknown>\n#15 0x5614b6066e56 <unknown>\n#16 0x5614b60781be <unknown>\n#17 0x7f5b9bd6caa4 <unknown>\n#18 0x7f5b9bdf9a64 __clone",
+      "time" : {
+        "start" : 1776777138699,
+        "stop" : 1776777157181,
+        "duration" : 18482
+      }
+    } ]
+  },
+  "ea7f6406db5f18835d9618f95c1786ef" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f6530ef8b9b854df",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: The test failed: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[normalize-space()='Kategorien']\"}\n  (Session info: chrome=147.0.7727.55); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\n#0 0x558885f09b6a <unknown>\n#1 0x55888590b265 <unknown>\n#2 0x55888595df76 <unknown>\n#3 0x55888595e1b1 <unknown>\n#4 0x5588859a97d4 <unknown>\n#5 0x5588859a6969 <unknown>\n#6 0x5588859515cf <unknown>\n#7 0x558885952391 <unknown>\n#8 0x558885ecf04b <unknown>\n#9 0x558885ed200d <unknown>\n#10 0x558885ebb808 <unknown>\n#11 0x558885ed2ba0 <unknown>\n#12 0x558885ea2280 <unknown>\n#13 0x558885ef6db8 <unknown>\n#14 0x558885ef6f88 <unknown>\n#15 0x558885f085de <unknown>\n#16 0x7f288ffc6aa4 <unknown>\n#17 0x7f2890053a64 __clone",
+      "time" : {
+        "start" : 1776777138005,
+        "stop" : 1776777156387,
+        "duration" : 18382
+      }
+    } ]
+  },
+  "ab9ae916396df6bf5f0d98f273b6941f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e34a02ec424430de",
+      "status" : "passed",
+      "time" : {
+        "start" : 1776777159406,
+        "stop" : 1776777175517,
+        "duration" : 16111
+      }
+    } ]
+  },
+  "e2b2be3ea42408e51052a02bd9cbf6b4" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4b6fbe3dd1aa6243",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: The test failed: Message: \nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5\nNoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5\ndom.find/</<@chrome://remote/content/shared/DOM.sys.mjs:136:16",
+      "time" : {
+        "start" : 1776777193154,
+        "stop" : 1776777228943,
+        "duration" : 35789
+      }
+    } ]
+  },
+  "384e944f2f987c073b973b900fb865c0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "35f367f97915d7d9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1776777052341,
+        "stop" : 1776777070120,
+        "duration" : 17779
+      }
+    } ]
+  },
+  "df2aa7be46c02e155dd95f6742dfdcc9" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d5b1b7e6dedd0dd8",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: The test failed: Message: \nStacktrace:\n#0 0x55ced30d153e <unknown>\n#1 0x55ced2a91984 <unknown>\n#2 0x55ced2ae3276 <unknown>\n#3 0x55ced2ae3671 <unknown>\n#4 0x55ced2b2da54 <unknown>\n#5 0x55ced2b2b650 <unknown>\n#6 0x55ced2ad7997 <unknown>\n#7 0x55ced2ad85c1 <unknown>\n#8 0x55ced309b58f <unknown>\n#9 0x55ced309e6da <unknown>\n#10 0x55ced309e16d <unknown>\n#11 0x55ced308bd18 <unknown>\n#12 0x55ced309ef34 <unknown>\n#13 0x55ced30751ce <unknown>\n#14 0x55ced30bec18 <unknown>\n#15 0x55ced30bee56 <unknown>\n#16 0x55ced30d01be <unknown>\n#17 0x7f10a559eaa4 <unknown>\n#18 0x7f10a562ba64 __clone",
+      "time" : {
+        "start" : 1776777100940,
+        "stop" : 1776777138059,
+        "duration" : 37119
+      }
+    } ]
+  }
+}

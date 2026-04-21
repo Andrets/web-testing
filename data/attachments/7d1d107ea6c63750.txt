@@ -1,0 +1,10 @@
+first_name: William
+last_name: Garcia
+birth_date: 1998-10-08
+city: Chicago
+state: IL
+street: 5181 Main St
+postal_code: 68978
+phone: 17524045866
+email: test_3zm53nw9@example.com
+password: tqa5%Br1I

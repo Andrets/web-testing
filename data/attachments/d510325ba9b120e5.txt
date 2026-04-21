@@ -1,0 +1,10 @@
+first_name: John
+last_name: Williams
+birth_date: 1998-08-11
+city: Houston
+state: TX
+street: 8852 Oak Ave
+postal_code: 72884
+phone: 13451397155
+email: test_r5wl83d6@example.com
+password: DbFk8bk1@

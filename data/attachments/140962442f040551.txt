@@ -1,0 +1,10 @@
+first_name: Michael
+last_name: Smith
+birth_date: 1984-12-17
+city: Phoenix
+state: AZ
+street: 3451 Elm St
+postal_code: 98235
+phone: 19050347405
+email: test_0ni2uik6@example.com
+password: z5l9@lHZa

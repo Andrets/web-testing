@@ -24,7 +24,9 @@ class SendMessageWithTextTest(unittest.TestCase):
             raise ValueError(f"Unsupported browser: {browser}")
         cls.driver = th.DRIVERS[browser]()
         cls.driver.maximize_window()
-        allure.dynamic.parameter("browser", browser)
+
+    def setUp(self):
+        allure.dynamic.parameter("browser", self.browser_name)
 
     @classmethod
     def tearDownClass(cls):

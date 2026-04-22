@@ -1,0 +1,10 @@
+first_name: James
+last_name: Williams
+birth_date: 1995-08-11
+city: Philadelphia
+state: PA
+street: 1222 Oak Ave
+postal_code: 71914
+phone: 17932048501
+email: test_oq9jyi30@example.com
+password: ff@1og4JS

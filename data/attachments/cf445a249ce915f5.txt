@@ -1,0 +1,10 @@
+first_name: William
+last_name: Johnson
+birth_date: 1989-07-15
+city: San Antonio
+state: TX
+street: 1891 Oak Ave
+postal_code: 63121
+phone: 13931053524
+email: test_fanepngh@example.com
+password: 6e4%GGuqh

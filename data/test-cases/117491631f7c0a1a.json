@@ -1,0 +1,90 @@
+{
+  "uid" : "117491631f7c0a1a",
+  "name" : "test_01_authorization",
+  "fullName" : "test_sidebar.SidebarTest#test_01_authorization",
+  "historyId" : "7656a8de2cd5d4e2717e60025cab5a23",
+  "time" : {
+    "start" : 1776860919999,
+    "stop" : 1776860936506,
+    "duration" : 16507
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "_unittest_setUpClass_fixture_SidebarTest",
+    "time" : {
+      "start" : 1776860919608,
+      "stop" : 1776860919999,
+      "duration" : 391
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "_unittest_setUpClass_fixture_SidebarTest::0",
+    "time" : {
+      "start" : 1776860951595,
+      "stop" : 1776860951679,
+      "duration" : 84
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "test_sidebar"
+  }, {
+    "name" : "subSuite",
+    "value" : "SidebarTest"
+  }, {
+    "name" : "host",
+    "value" : "406d6d9b91f7"
+  }, {
+    "name" : "thread",
+    "value" : "157-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_sidebar"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "'chrome'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "117491631f7c0a1a.json",
+  "parameterValues" : [ "'chrome'" ]
+}

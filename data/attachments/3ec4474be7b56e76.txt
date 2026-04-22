@@ -1,0 +1,10 @@
+first_name: Michael
+last_name: Davis
+birth_date: 1984-01-18
+city: San Diego
+state: CA
+street: 5176 Main St
+postal_code: 13648
+phone: 12889417065
+email: test_zjt9ylv9@example.com
+password: Fu37Isv#n

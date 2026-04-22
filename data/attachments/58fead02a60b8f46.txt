@@ -1,0 +1,10 @@
+first_name: John
+last_name: Williams
+birth_date: 1975-04-02
+city: Dallas
+state: TX
+street: 3918 Pine Rd
+postal_code: 19538
+phone: 13582368373
+email: test_wgau9kuw@example.com
+password: Afn@e2y3H

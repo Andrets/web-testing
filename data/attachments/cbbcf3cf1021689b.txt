@@ -1,0 +1,10 @@
+first_name: Richard
+last_name: Brown
+birth_date: 1996-03-27
+city: Dallas
+state: TX
+street: 2581 Cedar Ln
+postal_code: 70706
+phone: 17181364042
+email: test_55hbazcw@example.com
+password: 4mB9vW@br
